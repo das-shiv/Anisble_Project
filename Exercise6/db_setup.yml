@@ -1,0 +1,41 @@
+---
+- name: Install the mariadb server on dbserver
+  hosts: dbserver
+  become: yes
+  tasks:
+
+    - name: Install required PyMysql on db server
+      ansible.builtin.yum:
+        name: python3-PyMySQL
+        state: present
+
+    - name: Install the mariadb server on dbserver
+      ansible.builtin.yum:
+        name: mariadb-server
+        state: present
+        update_cache: yes
+
+    - name: Start and Enable the httpd service
+      ansible.builtin.service:
+        name: mariadb
+        state: started
+        enabled: yes
+
+
+    - name: Create a database named shiv_db
+      community.mysql.mysql_db:
+           name: shiv_db
+           state: present
+           login_unix_socket: /var/lib/mysql/mysql.sock
+
+    - name: Create a user named shiv on dbserver
+      community.mysql.mysql_user:
+          name: shiv
+          password: 12345
+          priv: '*.*:ALL'
+          state: present
+          login_unix_socket: /var/lib/mysql/mysql.sock
+
+
+
+

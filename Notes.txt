@@ -1,0 +1,24 @@
+=> How to disable initial ssh key verification:
+
+1. change to root user
+> sudo -i
+
+2. go tp /etc/ansible directory
+> cd /etc/ansible/
+
+3. take a backup of the original ansible.cfg file
+>  cp ansible.cfg ansible.cfg_original
+
+4. Read the content of the ansible.cfg file
+> cat ansible.cfg
+
+5. Run the following command from the ansible.cfg file
+> ansible-config init --disabled > ansible.cfg
+
+6. It will generate a new ansible.cfg file, open the file in vim editor.
+> vim ansible.cfg
+
+7. Find and edit the following line and save
+
+> host_key_checking=False
+-------------------------------------------------------------------------------------------------------------------------

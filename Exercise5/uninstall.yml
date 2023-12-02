@@ -1,0 +1,9 @@
+---
+- name: Uninstall httpd server from webserver
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: Uninstall httpd server
+      ansible.builtin.yum:
+        name: httpd
+        state: absent
