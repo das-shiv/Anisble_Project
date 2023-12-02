@@ -12,3 +12,5 @@ Commands used:
 > ansible -i inventory webserver -m ansible.builtin.service -a "name=httpd state=started enabled=yes" --become
 
 > ansible -i inventory webserver -m ansible.builtin.copy -a "src=index.html dest=/var/www/html/index.html" --become
+
+> ansible -i inventory webserver -m ansible.builtin.yum -a "name=httpd state=absent" --become

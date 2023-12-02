@@ -1,0 +1,19 @@
+---
+- name: Uninstall httpd server from webserver
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: Uninstall httpd server
+      ansible.builtin.yum:
+        name: httpd
+        state: absent
+
+
+- name: Uninstall the mariadb server on dbserver
+  hosts: dbserver
+  become: yes
+  tasks:
+    - name: Uninstall the mariadb server on dbserver
+      ansible.builtin.yum:
+        name: mariadb-server
+        state: absent

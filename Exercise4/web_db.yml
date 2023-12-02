@@ -1,0 +1,33 @@
+---
+- name: Install and enable httpd server on webserver
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: Install httpd server
+      ansible.builtin.yum:
+        name: httpd
+        state: present
+        update_cache: yes
+
+    - name: Start and Enable the httpd service
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: yes
+
+
+- name: Install the mariadb server on dbserver
+  hosts: dbserver
+  become: yes
+  tasks:
+    - name: Install the mariadb server on dbserver
+      ansible.builtin.yum:
+        name: mariadb-server
+        state: present
+        update_cache: yes
+
+    - name: Start and Enable the httpd service
+      ansible.builtin.service:
+        name: mariadb
+        state: started
+        enabled: yes
