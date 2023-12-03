@@ -1,0 +1,2 @@
+USR: host_vars_web01_user
+COMM: Ansible is accessing the variables from host_vars_web01

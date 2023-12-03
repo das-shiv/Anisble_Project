@@ -1,0 +1,1 @@
+This exercise shows the use of group variables and host variables in ansible. 

@@ -1,0 +1,26 @@
+---
+- name: To check the priority of ansible variables
+  hosts: all
+  become: yes
+  gather_facts: false
+
+  vars:
+     USR: playbook_user
+     COMM: Ansible is accessing the variables from playbook
+
+  tasks:
+
+  - name: Create a user
+    ansible.builtin.user:
+      name: "{{ USR }}"
+      comment: "{{ COMM }}"
+    register: useroutput
+
+  - name: Printing userout register using debug module
+    ansible.builtin.debug:
+      var: useroutput.name
+  
+  - ansible.builtin.debug:
+      var: useroutput.comment
+
+    

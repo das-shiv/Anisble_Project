@@ -1,0 +1,298 @@
+2023-12-03 20:28:12,666 p=512975 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:28:12,677 p=512975 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 20:28:41,410 p=512975 u=ssd n=ansible | ok: [web01]
+2023-12-03 20:29:07,867 p=512975 u=ssd n=ansible | ok: [db]
+2023-12-03 20:29:07,896 p=512975 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:29:22,072 p=512975 u=ssd n=ansible | changed: [web01]
+2023-12-03 20:29:37,216 p=512975 u=ssd n=ansible | changed: [db]
+2023-12-03 20:29:37,224 p=512975 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:29:37,256 p=512975 u=ssd n=ansible | ok: [web01] => {
+    "userout": "VARIABLE IS NOT DEFINED!"
+}
+2023-12-03 20:29:37,272 p=512975 u=ssd n=ansible | ok: [db] => {
+    "userout": "VARIABLE IS NOT DEFINED!"
+}
+2023-12-03 20:29:37,317 p=512975 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:29:37,318 p=512975 u=ssd n=ansible | db                         : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:29:37,318 p=512975 u=ssd n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:30:42,116 p=518344 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:30:42,136 p=518344 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:31:01,732 p=518344 u=ssd n=ansible | ok: [web01]
+2023-12-03 20:31:25,021 p=518344 u=ssd n=ansible | ok: [db]
+2023-12-03 20:31:25,025 p=518344 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:31:25,059 p=518344 u=ssd n=ansible | ok: [web01] => {
+    "useroutput": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python3"
+        },
+        "append": false,
+        "changed": false,
+        "comment": "Ansible is accessing the variables from playbook",
+        "failed": false,
+        "group": 1001,
+        "home": "/home/playbook_user",
+        "move_home": false,
+        "name": "playbook_user",
+        "shell": "/bin/bash",
+        "state": "present",
+        "uid": 1001
+    }
+}
+2023-12-03 20:31:25,075 p=518344 u=ssd n=ansible | ok: [db] => {
+    "useroutput": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python3"
+        },
+        "append": false,
+        "changed": false,
+        "comment": "Ansible is accessing the variables from playbook",
+        "failed": false,
+        "group": 1001,
+        "home": "/home/playbook_user",
+        "move_home": false,
+        "name": "playbook_user",
+        "shell": "/bin/bash",
+        "state": "present",
+        "uid": 1001
+    }
+}
+2023-12-03 20:31:25,103 p=518344 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:31:25,103 p=518344 u=ssd n=ansible | db                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:31:25,103 p=518344 u=ssd n=ansible | web01                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:32:23,407 p=521648 u=ssd n=ansible | [WARNING]: While constructing a mapping from /home/ssd/Desktop/Ansible_Project/Exercise10/var_priority.yml, line 21, column 7, found a duplicate dict
+key (var). Using last defined value only.
+
+2023-12-03 20:32:23,451 p=521648 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:32:23,476 p=521648 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:32:45,881 p=521648 u=ssd n=ansible | ok: [web01]
+2023-12-03 20:33:10,267 p=521648 u=ssd n=ansible | ok: [db]
+2023-12-03 20:33:10,274 p=521648 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:33:10,302 p=521648 u=ssd n=ansible | ok: [web01] => {
+    "userout.comment": "VARIABLE IS NOT DEFINED!"
+}
+2023-12-03 20:33:10,315 p=521648 u=ssd n=ansible | ok: [db] => {
+    "userout.comment": "VARIABLE IS NOT DEFINED!"
+}
+2023-12-03 20:33:10,339 p=521648 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:33:10,340 p=521648 u=ssd n=ansible | db                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:33:10,340 p=521648 u=ssd n=ansible | web01                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:33:53,290 p=523925 u=ssd n=ansible | [WARNING]: While constructing a mapping from /home/ssd/Desktop/Ansible_Project/Exercise10/var_priority.yml, line 21, column 7, found a duplicate dict
+key (var). Using last defined value only.
+
+2023-12-03 20:33:53,337 p=523925 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:33:53,364 p=523925 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:33:59,802 p=523925 u=ssd n=ansible |  [ERROR]: User interrupted execution
+
+2023-12-03 20:34:10,322 p=524530 u=ssd n=ansible | [WARNING]: While constructing a mapping from /home/ssd/Desktop/Ansible_Project/Exercise10/var_priority.yml, line 21, column 7, found a duplicate dict
+key (var). Using last defined value only.
+
+2023-12-03 20:34:10,369 p=524530 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:34:10,383 p=524530 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 20:34:22,763 p=524530 u=ssd n=ansible |  [ERROR]: User interrupted execution
+
+2023-12-03 20:35:00,340 p=525521 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:35:00,368 p=525521 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:35:14,256 p=525521 u=ssd n=ansible | ok: [web01]
+2023-12-03 20:35:35,912 p=525521 u=ssd n=ansible | ok: [db]
+2023-12-03 20:35:35,919 p=525521 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:35:35,955 p=525521 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.name": "playbook_user"
+}
+2023-12-03 20:35:35,971 p=525521 u=ssd n=ansible | ok: [db] => {
+    "useroutput.name": "playbook_user"
+}
+2023-12-03 20:35:35,977 p=525521 u=ssd n=ansible | TASK [ansible.builtin.deb822_repository] *************************************************************************************************************
+2023-12-03 20:35:47,543 p=525521 u=ssd n=ansible | fatal: [web01]: FAILED! => {"changed": false, "msg": "missing required arguments: name"}
+2023-12-03 20:35:59,728 p=525521 u=ssd n=ansible | fatal: [db]: FAILED! => {"changed": false, "msg": "missing required arguments: name"}
+2023-12-03 20:35:59,730 p=525521 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:35:59,730 p=525521 u=ssd n=ansible | db                         : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:35:59,730 p=525521 u=ssd n=ansible | web01                      : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:36:02,374 p=527059 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:36:02,396 p=527059 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:36:17,576 p=527059 u=ssd n=ansible | ok: [web01]
+2023-12-03 20:36:32,623 p=527059 u=ssd n=ansible | ok: [db]
+2023-12-03 20:36:32,628 p=527059 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:36:32,660 p=527059 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.name": "playbook_user"
+}
+2023-12-03 20:36:32,676 p=527059 u=ssd n=ansible | ok: [db] => {
+    "useroutput.name": "playbook_user"
+}
+2023-12-03 20:36:32,681 p=527059 u=ssd n=ansible | TASK [ansible.builtin.debug] *************************************************************************************************************************
+2023-12-03 20:36:32,715 p=527059 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.comment": "Ansible is accessing the variables from playbook"
+}
+2023-12-03 20:36:32,732 p=527059 u=ssd n=ansible | ok: [db] => {
+    "useroutput.comment": "Ansible is accessing the variables from playbook"
+}
+2023-12-03 20:36:32,770 p=527059 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:36:32,770 p=527059 u=ssd n=ansible | db                         : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:36:32,770 p=527059 u=ssd n=ansible | web01                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:37:40,103 p=530206 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:37:40,125 p=530206 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:38:11,900 p=530206 u=ssd n=ansible | ok: [web01]
+2023-12-03 20:38:32,446 p=530206 u=ssd n=ansible | ok: [db]
+2023-12-03 20:38:32,455 p=530206 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:38:32,500 p=530206 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.name": "playbook_user"
+}
+2023-12-03 20:38:32,515 p=530206 u=ssd n=ansible | ok: [db] => {
+    "useroutput.name": "playbook_user"
+}
+2023-12-03 20:38:32,521 p=530206 u=ssd n=ansible | TASK [ansible.builtin.debug] *************************************************************************************************************************
+2023-12-03 20:38:32,555 p=530206 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.comment": "Ansible is accessing the variables from playbook"
+}
+2023-12-03 20:38:32,569 p=530206 u=ssd n=ansible | ok: [db] => {
+    "useroutput.comment": "Ansible is accessing the variables from playbook"
+}
+2023-12-03 20:38:32,593 p=530206 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:38:32,593 p=530206 u=ssd n=ansible | db                         : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:38:32,593 p=530206 u=ssd n=ansible | web01                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:38:47,277 p=532684 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:38:47,299 p=532684 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:39:02,292 p=532684 u=ssd n=ansible | changed: [web01]
+2023-12-03 20:39:17,029 p=532684 u=ssd n=ansible | changed: [db]
+2023-12-03 20:39:17,033 p=532684 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:39:17,067 p=532684 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.name": "groupvars_all"
+}
+2023-12-03 20:39:17,082 p=532684 u=ssd n=ansible | ok: [db] => {
+    "useroutput.name": "groupvars_all"
+}
+2023-12-03 20:39:17,086 p=532684 u=ssd n=ansible | TASK [ansible.builtin.debug] *************************************************************************************************************************
+2023-12-03 20:39:17,119 p=532684 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.comment": "Ansible is accessing the variables from groupvars_all"
+}
+2023-12-03 20:39:17,134 p=532684 u=ssd n=ansible | ok: [db] => {
+    "useroutput.comment": "Ansible is accessing the variables from groupvars_all"
+}
+2023-12-03 20:39:17,165 p=532684 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:39:17,165 p=532684 u=ssd n=ansible | db                         : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:39:17,165 p=532684 u=ssd n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:40:22,580 p=535431 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:40:22,603 p=535431 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:40:45,724 p=535431 u=ssd n=ansible | ok: [web01]
+2023-12-03 20:41:07,832 p=535431 u=ssd n=ansible | ok: [db]
+2023-12-03 20:41:07,837 p=535431 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:41:07,870 p=535431 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.name": "groupvars_all"
+}
+2023-12-03 20:41:07,886 p=535431 u=ssd n=ansible | ok: [db] => {
+    "useroutput.name": "groupvars_all"
+}
+2023-12-03 20:41:07,893 p=535431 u=ssd n=ansible | TASK [ansible.builtin.debug] *************************************************************************************************************************
+2023-12-03 20:41:07,924 p=535431 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.comment": "Ansible is accessing the variables from groupvars_all"
+}
+2023-12-03 20:41:07,939 p=535431 u=ssd n=ansible | ok: [db] => {
+    "useroutput.comment": "Ansible is accessing the variables from groupvars_all"
+}
+2023-12-03 20:41:07,967 p=535431 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:41:07,967 p=535431 u=ssd n=ansible | db                         : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:41:07,967 p=535431 u=ssd n=ansible | web01                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:42:44,107 p=539971 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:42:44,132 p=539971 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:43:05,805 p=539971 u=ssd n=ansible | changed: [web01]
+2023-12-03 20:43:25,056 p=539971 u=ssd n=ansible | ok: [db]
+2023-12-03 20:43:25,060 p=539971 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:43:25,096 p=539971 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.name": "group_vars_webserver_user"
+}
+2023-12-03 20:43:25,113 p=539971 u=ssd n=ansible | ok: [db] => {
+    "useroutput.name": "groupvars_all"
+}
+2023-12-03 20:43:25,118 p=539971 u=ssd n=ansible | TASK [ansible.builtin.debug] *************************************************************************************************************************
+2023-12-03 20:43:25,151 p=539971 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.comment": "Ansible is accessing the variables from group_vars_webserver"
+}
+2023-12-03 20:43:25,168 p=539971 u=ssd n=ansible | ok: [db] => {
+    "useroutput.comment": "Ansible is accessing the variables from groupvars_all"
+}
+2023-12-03 20:43:25,201 p=539971 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:43:25,202 p=539971 u=ssd n=ansible | db                         : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:43:25,202 p=539971 u=ssd n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:45:37,907 p=545482 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:45:37,930 p=545482 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:45:59,256 p=545482 u=ssd n=ansible | changed: [web01]
+2023-12-03 20:46:20,767 p=545482 u=ssd n=ansible | changed: [db]
+2023-12-03 20:46:20,773 p=545482 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:46:20,808 p=545482 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.name": "host_vars_web01_user"
+}
+2023-12-03 20:46:20,823 p=545482 u=ssd n=ansible | ok: [db] => {
+    "useroutput.name": "host_vars_dbserver_user"
+}
+2023-12-03 20:46:20,830 p=545482 u=ssd n=ansible | TASK [ansible.builtin.debug] *************************************************************************************************************************
+2023-12-03 20:46:20,866 p=545482 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.comment": "Ansible is accessing the variables from host_vars_web01"
+}
+2023-12-03 20:46:20,883 p=545482 u=ssd n=ansible | ok: [db] => {
+    "useroutput.comment": "Ansible is accessing the variables from host_vars_dbserver"
+}
+2023-12-03 20:46:20,913 p=545482 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:46:20,913 p=545482 u=ssd n=ansible | db                         : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:46:20,914 p=545482 u=ssd n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:47:19,392 p=548399 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:47:19,417 p=548399 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:47:38,643 p=548399 u=ssd n=ansible | ok: [web01]
+2023-12-03 20:47:58,386 p=548399 u=ssd n=ansible | changed: [db]
+2023-12-03 20:47:58,394 p=548399 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:47:58,429 p=548399 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.name": "host_vars_web01_user"
+}
+2023-12-03 20:47:58,450 p=548399 u=ssd n=ansible | ok: [db] => {
+    "useroutput.name": "group_vars_dbserver_user"
+}
+2023-12-03 20:47:58,456 p=548399 u=ssd n=ansible | TASK [ansible.builtin.debug] *************************************************************************************************************************
+2023-12-03 20:47:58,491 p=548399 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.comment": "Ansible is accessing the variables from host_vars_web01"
+}
+2023-12-03 20:47:58,509 p=548399 u=ssd n=ansible | ok: [db] => {
+    "useroutput.comment": "Ansible is accessing the variables from group_vars_dbserver"
+}
+2023-12-03 20:47:58,541 p=548399 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:47:58,541 p=548399 u=ssd n=ansible | db                         : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:47:58,542 p=548399 u=ssd n=ansible | web01                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:48:40,207 p=550425 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:48:40,230 p=550425 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:48:59,569 p=550425 u=ssd n=ansible | ok: [web01]
+2023-12-03 20:49:20,454 p=550425 u=ssd n=ansible | ok: [db]
+2023-12-03 20:49:20,458 p=550425 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:49:20,491 p=550425 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.name": "playbook_user"
+}
+2023-12-03 20:49:20,507 p=550425 u=ssd n=ansible | ok: [db] => {
+    "useroutput.name": "playbook_user"
+}
+2023-12-03 20:49:20,514 p=550425 u=ssd n=ansible | TASK [ansible.builtin.debug] *************************************************************************************************************************
+2023-12-03 20:49:20,551 p=550425 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.comment": "Ansible is accessing the variables from playbook"
+}
+2023-12-03 20:49:20,569 p=550425 u=ssd n=ansible | ok: [db] => {
+    "useroutput.comment": "Ansible is accessing the variables from playbook"
+}
+2023-12-03 20:49:20,599 p=550425 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:49:20,599 p=550425 u=ssd n=ansible | db                         : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:49:20,599 p=550425 u=ssd n=ansible | web01                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:49:51,844 p=551988 u=ssd n=ansible | PLAY [To check the priority of ansible variables] ****************************************************************************************************
+2023-12-03 20:49:51,878 p=551988 u=ssd n=ansible | TASK [Create a user] *********************************************************************************************************************************
+2023-12-03 20:50:07,486 p=551988 u=ssd n=ansible | changed: [web01]
+2023-12-03 20:50:22,530 p=551988 u=ssd n=ansible | changed: [db]
+2023-12-03 20:50:22,536 p=551988 u=ssd n=ansible | TASK [Printing userout register using debug module] **************************************************************************************************
+2023-12-03 20:50:22,573 p=551988 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.name": "cliusr"
+}
+2023-12-03 20:50:22,595 p=551988 u=ssd n=ansible | ok: [db] => {
+    "useroutput.name": "cliusr"
+}
+2023-12-03 20:50:22,604 p=551988 u=ssd n=ansible | TASK [ansible.builtin.debug] *************************************************************************************************************************
+2023-12-03 20:50:22,644 p=551988 u=ssd n=ansible | ok: [web01] => {
+    "useroutput.comment": "Ansible is accessing the variables from playbook"
+}
+2023-12-03 20:50:22,666 p=551988 u=ssd n=ansible | ok: [db] => {
+    "useroutput.comment": "Ansible is accessing the variables from playbook"
+}
+2023-12-03 20:50:22,708 p=551988 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 20:50:22,708 p=551988 u=ssd n=ansible | db                         : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 20:50:22,708 p=551988 u=ssd n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

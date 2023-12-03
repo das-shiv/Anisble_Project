@@ -1,0 +1,46 @@
+2023-12-03 19:52:14,678 p=441944 u=ssd n=ansible | PLAY [Install the mariadb server on dbserver] ********************************************************************************************************
+2023-12-03 19:52:14,693 p=441944 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 19:52:39,175 p=441944 u=ssd n=ansible | ok: [db]
+2023-12-03 19:52:39,193 p=441944 u=ssd n=ansible | TASK [Print db_name using debug module var option] ***************************************************************************************************
+2023-12-03 19:52:39,218 p=441944 u=ssd n=ansible | ok: [db] => {
+    "db_name": "shiv_db"
+}
+2023-12-03 19:52:39,225 p=441944 u=ssd n=ansible | TASK [Print db_user using debug module and msg option] ***********************************************************************************************
+2023-12-03 19:52:39,250 p=441944 u=ssd n=ansible | ok: [db] => {
+    "msg": "The db_user is: shiv"
+}
+2023-12-03 19:52:39,261 p=441944 u=ssd n=ansible | TASK [Install required PyMysql on db server] *********************************************************************************************************
+2023-12-03 19:52:53,107 p=441944 u=ssd n=ansible | ok: [db]
+2023-12-03 19:52:53,117 p=441944 u=ssd n=ansible | TASK [Install the mariadb server on dbserver] ********************************************************************************************************
+2023-12-03 19:53:09,113 p=441944 u=ssd n=ansible | changed: [db]
+2023-12-03 19:53:09,120 p=441944 u=ssd n=ansible | TASK [Start and Enable the mariadb service] **********************************************************************************************************
+2023-12-03 19:53:24,068 p=441944 u=ssd n=ansible | changed: [db]
+2023-12-03 19:53:24,076 p=441944 u=ssd n=ansible | TASK [Create a database named shiv_db] ***************************************************************************************************************
+2023-12-03 19:53:35,472 p=441944 u=ssd n=ansible | ok: [db]
+2023-12-03 19:53:35,480 p=441944 u=ssd n=ansible | TASK [Create a user named shiv on dbserver] **********************************************************************************************************
+2023-12-03 19:53:46,445 p=441944 u=ssd n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be
+changed to true in community.mysql 4.0.0.
+
+2023-12-03 19:53:46,445 p=441944 u=ssd n=ansible | ok: [db]
+2023-12-03 19:53:46,454 p=441944 u=ssd n=ansible | TASK [Using debug module to print the value of db_register] ******************************************************************************************
+2023-12-03 19:53:46,482 p=441944 u=ssd n=ansible | ok: [db] => {
+    "db_register": {
+        "changed": false,
+        "failed": false,
+        "msg": "User unchanged",
+        "password_changed": false,
+        "user": " shiv",
+        "warnings": [
+            "Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in community.mysql 4.0.0."
+        ]
+    }
+}
+2023-12-03 19:53:46,508 p=441944 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 19:53:46,509 p=441944 u=ssd n=ansible | db                         : ok=9    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 19:54:06,811 p=446054 u=ssd n=ansible | PLAY [Uninstall the mariadb server on dbserver] ******************************************************************************************************
+2023-12-03 19:54:06,821 p=446054 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 19:54:25,876 p=446054 u=ssd n=ansible | ok: [db]
+2023-12-03 19:54:25,894 p=446054 u=ssd n=ansible | TASK [Uninstall the mariadb server on dbserver] ******************************************************************************************************
+2023-12-03 19:54:40,072 p=446054 u=ssd n=ansible | changed: [db]
+2023-12-03 19:54:40,097 p=446054 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 19:54:40,097 p=446054 u=ssd n=ansible | db                         : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

@@ -1,0 +1,6 @@
+package_name: python3-PyMySQL
+db_package_name: mariadb-server
+service_name: mariadb
+db_name: shiv_db
+db_user: shiv
+db_pass: 12345

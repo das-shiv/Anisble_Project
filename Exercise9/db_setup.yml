@@ -1,0 +1,52 @@
+---
+- name: Install the mariadb server on dbserver
+  hosts: dbserver
+  become: yes
+  
+  tasks:
+    - name: Print db_name using debug module var option
+      ansible.builtin.debug:
+        var: db_name
+    - name: Print db_user using debug module and msg option
+      ansible.builtin.debug:
+        msg: "The db_user is: {{db_user }}"
+
+    - name: Install required PyMysql on db server
+      ansible.builtin.yum:
+        name: "{{package_name}}"
+        state: present
+
+    - name: Install the mariadb server on dbserver
+      ansible.builtin.yum:
+        name: " {{db_package_name }}"
+        state: present
+        update_cache: yes
+
+    - name: Start and Enable the mariadb service
+      ansible.builtin.service:
+        name: "{{service_name}}"
+        state: started
+        enabled: yes
+
+
+    - name: Create a database named shiv_db
+      community.mysql.mysql_db:
+           name: "{{db_name}}" 
+           state: present
+           login_unix_socket: /var/lib/mysql/mysql.sock
+
+    - name: Create a user named shiv on dbserver
+      community.mysql.mysql_user:
+          name: " {{db_user }}"
+          password: "{{ db_pass }}"
+          priv: '*.*:ALL'
+          state: present
+          login_unix_socket: /var/lib/mysql/mysql.sock
+      register: db_register
+
+    - name: Using debug module to print the value of db_register
+      ansible.builtin.debug:
+        var: db_register
+
+
+

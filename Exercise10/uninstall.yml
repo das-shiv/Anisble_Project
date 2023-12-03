@@ -1,0 +1,10 @@
+---
+
+- name: Uninstall the mariadb server on dbserver
+  hosts: dbserver
+  become: yes
+  tasks:
+    - name: Uninstall the mariadb server on dbserver
+      ansible.builtin.yum:
+        name: mariadb-server
+        state: absent
