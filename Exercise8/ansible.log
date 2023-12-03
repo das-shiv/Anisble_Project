@@ -1,0 +1,157 @@
+2023-12-03 19:10:46,915 p=345896 u=ssd n=ansible | PLAY [Install the mariadb server on dbserver] ********************************************************************************************************
+2023-12-03 19:10:47,015 p=345896 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 19:10:54,153 p=345896 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '54.152.224.117' (ED25519) to the list of known hosts.\r\nec2-user@54.152.224.117: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).", "unreachable": true}
+2023-12-03 19:10:54,154 p=345896 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 19:10:54,154 p=345896 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 19:13:05,327 p=351166 u=ssd n=ansible | PLAY [Install the mariadb server on dbserver] ********************************************************************************************************
+2023-12-03 19:13:05,336 p=351166 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 19:13:32,877 p=351166 u=ssd n=ansible | ok: [db]
+2023-12-03 19:13:32,929 p=351166 u=ssd n=ansible | TASK [Install required PyMysql on db server] *********************************************************************************************************
+2023-12-03 19:13:50,071 p=351166 u=ssd n=ansible | ok: [db]
+2023-12-03 19:13:50,080 p=351166 u=ssd n=ansible | TASK [Install the mariadb server on dbserver] ********************************************************************************************************
+2023-12-03 19:14:11,268 p=351166 u=ssd n=ansible | changed: [db]
+2023-12-03 19:14:11,318 p=351166 u=ssd n=ansible | TASK [Start and Enable the httpd service] ************************************************************************************************************
+2023-12-03 19:14:33,696 p=351166 u=ssd n=ansible | changed: [db]
+2023-12-03 19:14:33,708 p=351166 u=ssd n=ansible | TASK [Create a database named shiv_db] ***************************************************************************************************************
+2023-12-03 19:14:44,753 p=351166 u=ssd n=ansible | ok: [db]
+2023-12-03 19:14:44,767 p=351166 u=ssd n=ansible | TASK [Create a user named shiv on dbserver] **********************************************************************************************************
+2023-12-03 19:14:56,835 p=351166 u=ssd n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be
+changed to true in community.mysql 4.0.0.
+
+2023-12-03 19:14:56,835 p=351166 u=ssd n=ansible | changed: [db]
+2023-12-03 19:14:56,858 p=351166 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 19:14:56,858 p=351166 u=ssd n=ansible | db                         : ok=6    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 19:16:38,006 p=359401 u=ssd n=ansible | PLAY [Uninstall the mariadb server on dbserver] ******************************************************************************************************
+2023-12-03 19:16:38,016 p=359401 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 19:17:02,212 p=359401 u=ssd n=ansible | ok: [db]
+2023-12-03 19:17:02,238 p=359401 u=ssd n=ansible | TASK [Uninstall the mariadb server on dbserver] ******************************************************************************************************
+2023-12-03 19:17:16,301 p=359401 u=ssd n=ansible | changed: [db]
+2023-12-03 19:17:16,325 p=359401 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 19:17:16,325 p=359401 u=ssd n=ansible | db                         : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 19:22:29,903 p=374224 u=ssd n=ansible | ansible-playbook [core 2.15.6]
+  config file = /home/ssd/Desktop/Ansible_Project/Exercise8/ansible.cfg
+  configured module search path = ['/home/ssd/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /home/ssd/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] (/usr/bin/python3)
+  jinja version = 3.1.2
+  libyaml = True
+2023-12-03 19:22:29,903 p=374224 u=ssd n=ansible | Using /home/ssd/Desktop/Ansible_Project/Exercise8/ansible.cfg as config file
+2023-12-03 19:22:30,264 p=374224 u=ssd n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2023-12-03 19:22:30,264 p=374224 u=ssd n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2023-12-03 19:22:30,264 p=374224 u=ssd n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2023-12-03 19:22:30,264 p=374224 u=ssd n=ansible | PLAYBOOK: db_setup.yml *******************************************************************************************************************************
+2023-12-03 19:22:30,264 p=374224 u=ssd n=ansible | 1 plays in db_setup.yml
+2023-12-03 19:22:30,266 p=374224 u=ssd n=ansible | PLAY [Install the mariadb server on dbserver] ********************************************************************************************************
+2023-12-03 19:22:30,275 p=374224 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 19:22:59,340 p=374224 u=ssd n=ansible | ok: [db]
+2023-12-03 19:22:59,357 p=374224 u=ssd n=ansible | TASK [Install required PyMysql on db server] *********************************************************************************************************
+2023-12-03 19:23:12,850 p=374224 u=ssd n=ansible | ok: [db] => {"changed": false, "msg": "Nothing to do", "rc": 0, "results": []}
+2023-12-03 19:23:12,857 p=374224 u=ssd n=ansible | TASK [Install the mariadb server on dbserver] ********************************************************************************************************
+2023-12-03 19:23:31,076 p=374224 u=ssd n=ansible | changed: [db] => {"changed": true, "msg": "", "rc": 0, "results": ["Installed: mariadb-gssapi-server-3:10.5.16-2.el9.x86_64", "Installed: mariadb-backup-3:10.5.16-2.el9.x86_64", "Installed: mariadb-server-3:10.5.16-2.el9.x86_64", "Installed: mariadb-server-utils-3:10.5.16-2.el9.x86_64"]}
+2023-12-03 19:23:31,084 p=374224 u=ssd n=ansible | TASK [Start and Enable the mariadb service] **********************************************************************************************************
+2023-12-03 19:23:46,340 p=374224 u=ssd n=ansible | changed: [db] => {"changed": true, "enabled": true, "name": "mariadb", "state": "started", "status": {"AccessSELinuxContext": "system_u:object_r:mysqld_unit_file_t:s0", "ActiveEnterTimestampMonotonic": "0", "ActiveExitTimestampMonotonic": "0", "ActiveState": "inactive", "After": "basic.target tmp.mount -.mount systemd-tmpfiles-setup.service sysinit.target network.target systemd-journald.socket system.slice", "AllowIsolate": "no", "AssertResult": "no", "AssertTimestampMonotonic": "0", "Before": "shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "[not set]", "CPUAccounting": "yes", "CPUAffinityFromNUMA": "no", "CPUQuotaPerSecUSec": "infinity", "CPUQuotaPeriodUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "[not set]", "CPUUsageNSec": "[not set]", "CPUWeight": "[not set]", "CacheDirectoryMode": "0755", "CanFreeze": "yes", "CanIsolate": "no", "CanReload": "no", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read cap_perfmon cap_bpf cap_checkpoint_restore", "CleanResult": "success", "CollectMode": "inactive", "ConditionResult": "no", "ConditionTimestampMonotonic": "0", "ConfigurationDirectoryMode": "0755", "Conflicts": "shutdown.target", "ControlGroupId": "0", "ControlPID": "0", "CoredumpFilter": "0x33", "DefaultDependencies": "yes", "DefaultMemoryLow": "0", "DefaultMemoryMin": "0", "Delegate": "no", "Description": "MariaDB 10.5 database server", "DevicePolicy": "auto", "Documentation": "\"man:mariadbd(8)\" https://mariadb.com/kb/en/library/systemd/", "DynamicUser": "no", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "0", "ExecMainStartTimestampMonotonic": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/usr/libexec/mariadbd ; argv[]=/usr/libexec/mariadbd --basedir=/usr $MYSQLD_OPTS $_WSREP_NEW_CLUSTER ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartEx": "{ path=/usr/libexec/mariadbd ; argv[]=/usr/libexec/mariadbd --basedir=/usr $MYSQLD_OPTS $_WSREP_NEW_CLUSTER ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartPost": "{ path=/usr/libexec/mariadb-check-upgrade ; argv[]=/usr/libexec/mariadb-check-upgrade ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartPostEx": "{ path=/usr/libexec/mariadb-check-upgrade ; argv[]=/usr/libexec/mariadb-check-upgrade ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartPre": "{ path=/usr/libexec/mariadb-prepare-db-dir ; argv[]=/usr/libexec/mariadb-prepare-db-dir mariadb.service ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartPreEx": "{ path=/usr/libexec/mariadb-prepare-db-dir ; argv[]=/usr/libexec/mariadb-prepare-db-dir mariadb.service ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExitType": "main", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FinalKillSignal": "9", "FragmentPath": "/usr/lib/systemd/system/mariadb.service", "FreezerState": "running", "GID": "[not set]", "Group": "mysql", "GuessMainPID": "yes", "IOAccounting": "no", "IOReadBytes": "18446744073709551615", "IOReadOperations": "18446744073709551615", "IOSchedulingClass": "2", "IOSchedulingPriority": "4", "IOWeight": "[not set]", "IOWriteBytes": "18446744073709551615", "IOWriteOperations": "18446744073709551615", "IPAccounting": "no", "IPEgressBytes": "[no data]", "IPEgressPackets": "[no data]", "IPIngressBytes": "[no data]", "IPIngressPackets": "[no data]", "Id": "mariadb.service", "IgnoreOnIsolate": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestampMonotonic": "0", "JobRunningTimeoutUSec": "infinity", "JobTimeoutAction": "none", "JobTimeoutUSec": "infinity", "KeyringMode": "private", "KillMode": "control-group", "KillSignal": "15", "LimitAS": "infinity", "LimitASSoft": "infinity", "LimitCORE": "infinity", "LimitCORESoft": "0", "LimitCPU": "infinity", "LimitCPUSoft": "infinity", "LimitDATA": "infinity", "LimitDATASoft": "infinity", "LimitFSIZE": "infinity", "LimitFSIZESoft": "infinity", "LimitLOCKS": "infinity", "LimitLOCKSSoft": "infinity", "LimitMEMLOCK": "8388608", "LimitMEMLOCKSoft": "8388608", "LimitMSGQUEUE": "819200", "LimitMSGQUEUESoft": "819200", "LimitNICE": "0", "LimitNICESoft": "0", "LimitNOFILE": "524288", "LimitNOFILESoft": "1024", "LimitNPROC": "2805", "LimitNPROCSoft": "2805", "LimitRSS": "infinity", "LimitRSSSoft": "infinity", "LimitRTPRIO": "0", "LimitRTPRIOSoft": "0", "LimitRTTIME": "infinity", "LimitRTTIMESoft": "infinity", "LimitSIGPENDING": "2805", "LimitSIGPENDINGSoft": "2805", "LimitSTACK": "infinity", "LimitSTACKSoft": "8388608", "LoadState": "loaded", "LockPersonality": "no", "LogLevelMax": "-1", "LogRateLimitBurst": "0", "LogRateLimitIntervalUSec": "0", "LogsDirectoryMode": "0755", "MainPID": "0", "ManagedOOMMemoryPressure": "auto", "ManagedOOMMemoryPressureLimit": "0", "ManagedOOMPreference": "none", "ManagedOOMSwap": "auto", "MemoryAccounting": "yes", "MemoryAvailable": "infinity", "MemoryCurrent": "[not set]", "MemoryDenyWriteExecute": "no", "MemoryHigh": "infinity", "MemoryLimit": "infinity", "MemoryLow": "0", "MemoryMax": "infinity", "MemoryMin": "0", "MemorySwapMax": "infinity", "MountAPIVFS": "no", "NFileDescriptorStore": "0", "NRestarts": "0", "NUMAPolicy": "n/a", "Names": "mariadb.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "main", "OOMPolicy": "stop", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "OnSuccessJobMode": "fail", "Perpetual": "no", "PrivateDevices": "no", "PrivateIPC": "no", "PrivateMounts": "no", "PrivateNetwork": "no", "PrivateTmp": "yes", "PrivateUsers": "no", "ProcSubset": "all", "ProtectClock": "no", "ProtectControlGroups": "no", "ProtectHome": "no", "ProtectHostname": "no", "ProtectKernelLogs": "no", "ProtectKernelModules": "no", "ProtectKernelTunables": "no", "ProtectProc": "default", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "ReloadResult": "success", "RemainAfterExit": "no", "RemoveIPC": "no", "Requires": "system.slice sysinit.target -.mount", "RequiresMountsFor": "/var/tmp", "Restart": "on-abort", "RestartKillSignal": "15", "RestartUSec": "5s", "RestrictNamespaces": "no", "RestrictRealtime": "no", "RestrictSUIDSGID": "no", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "RuntimeDirectoryPreserve": "no", "RuntimeMaxUSec": "infinity", "RuntimeRandomizedExtraUSec": "0", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "no", "Slice": "system.slice", "StandardError": "inherit", "StandardInput": "null", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitIntervalUSec": "10s", "StartupBlockIOWeight": "[not set]", "StartupCPUShares": "[not set]", "StartupCPUWeight": "[not set]", "StartupIOWeight": "[not set]", "StateChangeTimestampMonotonic": "0", "StateDirectoryMode": "0755", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "dead", "SuccessAction": "none", "SyslogFacility": "3", "SyslogLevel": "6", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "2147483646", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TasksAccounting": "yes", "TasksCurrent": "[not set]", "TasksMax": "4488", "TimeoutAbortUSec": "5min", "TimeoutCleanUSec": "infinity", "TimeoutStartFailureMode": "terminate", "TimeoutStartUSec": "5min", "TimeoutStopFailureMode": "terminate", "TimeoutStopUSec": "5min", "TimerSlackNSec": "50000", "Transient": "no", "Type": "notify", "UID": "[not set]", "UMask": "0007", "UnitFilePreset": "disabled", "UnitFileState": "disabled", "User": "mysql", "UtmpMode": "init", "WatchdogSignal": "6", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "infinity"}}
+2023-12-03 19:23:46,349 p=374224 u=ssd n=ansible | TASK [Create a database named shiv_db] ***************************************************************************************************************
+2023-12-03 19:24:00,567 p=374224 u=ssd n=ansible | ok: [db] => {"changed": false, "db": "shiv_db", "db_list": ["shiv_db"], "executed_commands": []}
+2023-12-03 19:24:00,576 p=374224 u=ssd n=ansible | TASK [Create a user named shiv on dbserver] **********************************************************************************************************
+2023-12-03 19:24:13,674 p=374224 u=ssd n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be
+changed to true in community.mysql 4.0.0.
+
+2023-12-03 19:24:13,674 p=374224 u=ssd n=ansible | ok: [db] => {"changed": false, "msg": "User unchanged", "password_changed": false, "user": " shiv"}
+2023-12-03 19:24:13,709 p=374224 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 19:24:13,710 p=374224 u=ssd n=ansible | db                         : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 19:25:41,672 p=382166 u=ssd n=ansible | PLAY [Uninstall the mariadb server on dbserver] ******************************************************************************************************
+2023-12-03 19:25:41,683 p=382166 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 19:26:07,697 p=382166 u=ssd n=ansible | ok: [db]
+2023-12-03 19:26:07,715 p=382166 u=ssd n=ansible | TASK [Uninstall the mariadb server on dbserver] ******************************************************************************************************
+2023-12-03 19:26:23,097 p=382166 u=ssd n=ansible | changed: [db]
+2023-12-03 19:26:23,135 p=382166 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 19:26:23,135 p=382166 u=ssd n=ansible | db                         : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 19:28:30,787 p=388922 u=ssd n=ansible | PLAY [Install the mariadb server on dbserver] ********************************************************************************************************
+2023-12-03 19:28:30,803 p=388922 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 19:28:57,132 p=388922 u=ssd n=ansible | ok: [db]
+2023-12-03 19:28:57,203 p=388922 u=ssd n=ansible | TASK [ansible.builtin.debug] *************************************************************************************************************************
+2023-12-03 19:28:57,243 p=388922 u=ssd n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: NoneType: None
+2023-12-03 19:28:57,245 p=388922 u=ssd n=ansible | fatal: [db]: FAILED! => {"msg": "parameters are mutually exclusive: msg|var"}
+2023-12-03 19:28:57,247 p=388922 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 19:28:57,248 p=388922 u=ssd n=ansible | db                         : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-12-03 19:29:45,747 p=392310 u=ssd n=ansible | PLAY [Install the mariadb server on dbserver] ********************************************************************************************************
+2023-12-03 19:29:45,758 p=392310 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 19:30:05,523 p=392310 u=ssd n=ansible | ok: [db]
+2023-12-03 19:30:05,540 p=392310 u=ssd n=ansible | TASK [ansible.builtin.debug] *************************************************************************************************************************
+2023-12-03 19:30:05,564 p=392310 u=ssd n=ansible | ok: [db] => {
+    "db_name": "shiv_db"
+}
+2023-12-03 19:30:05,575 p=392310 u=ssd n=ansible | TASK [ansible.builtin.debug] *************************************************************************************************************************
+2023-12-03 19:30:05,601 p=392310 u=ssd n=ansible | ok: [db] => {
+    "msg": "The db_user is: shiv"
+}
+2023-12-03 19:30:05,613 p=392310 u=ssd n=ansible | TASK [Install required PyMysql on db server] *********************************************************************************************************
+2023-12-03 19:30:19,235 p=392310 u=ssd n=ansible | ok: [db]
+2023-12-03 19:30:19,243 p=392310 u=ssd n=ansible | TASK [Install the mariadb server on dbserver] ********************************************************************************************************
+2023-12-03 19:30:37,257 p=392310 u=ssd n=ansible | changed: [db]
+2023-12-03 19:30:37,265 p=392310 u=ssd n=ansible | TASK [Start and Enable the mariadb service] **********************************************************************************************************
+2023-12-03 19:30:53,746 p=392310 u=ssd n=ansible | changed: [db]
+2023-12-03 19:30:53,754 p=392310 u=ssd n=ansible | TASK [Create a database named shiv_db] ***************************************************************************************************************
+2023-12-03 19:31:07,362 p=392310 u=ssd n=ansible | ok: [db]
+2023-12-03 19:31:07,373 p=392310 u=ssd n=ansible | TASK [Create a user named shiv on dbserver] **********************************************************************************************************
+2023-12-03 19:31:20,881 p=392310 u=ssd n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be
+changed to true in community.mysql 4.0.0.
+
+2023-12-03 19:31:20,881 p=392310 u=ssd n=ansible | ok: [db]
+2023-12-03 19:31:20,924 p=392310 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 19:31:20,924 p=392310 u=ssd n=ansible | db                         : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 19:31:50,334 p=397606 u=ssd n=ansible | PLAY [Uninstall the mariadb server on dbserver] ******************************************************************************************************
+2023-12-03 19:31:50,351 p=397606 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 19:32:10,696 p=397606 u=ssd n=ansible | ok: [db]
+2023-12-03 19:32:10,720 p=397606 u=ssd n=ansible | TASK [Uninstall the mariadb server on dbserver] ******************************************************************************************************
+2023-12-03 19:32:24,825 p=397606 u=ssd n=ansible | changed: [db]
+2023-12-03 19:32:24,854 p=397606 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 19:32:24,854 p=397606 u=ssd n=ansible | db                         : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 19:34:49,895 p=404200 u=ssd n=ansible | PLAY [Install the mariadb server on dbserver] ********************************************************************************************************
+2023-12-03 19:34:49,910 p=404200 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 19:35:15,287 p=404200 u=ssd n=ansible | ok: [db]
+2023-12-03 19:35:15,328 p=404200 u=ssd n=ansible | TASK [Print db_name using debug module var option] ***************************************************************************************************
+2023-12-03 19:35:15,365 p=404200 u=ssd n=ansible | ok: [db] => {
+    "db_name": "shiv_db"
+}
+2023-12-03 19:35:15,377 p=404200 u=ssd n=ansible | TASK [Print db_user using debug module and msg option] ***********************************************************************************************
+2023-12-03 19:35:15,402 p=404200 u=ssd n=ansible | ok: [db] => {
+    "msg": "The db_user is: shiv"
+}
+2023-12-03 19:35:15,414 p=404200 u=ssd n=ansible | TASK [Install required PyMysql on db server] *********************************************************************************************************
+2023-12-03 19:35:27,760 p=404200 u=ssd n=ansible | ok: [db]
+2023-12-03 19:35:27,768 p=404200 u=ssd n=ansible | TASK [Install the mariadb server on dbserver] ********************************************************************************************************
+2023-12-03 19:35:43,269 p=404200 u=ssd n=ansible | changed: [db]
+2023-12-03 19:35:43,276 p=404200 u=ssd n=ansible | TASK [Start and Enable the mariadb service] **********************************************************************************************************
+2023-12-03 19:36:00,121 p=404200 u=ssd n=ansible | changed: [db]
+2023-12-03 19:36:00,131 p=404200 u=ssd n=ansible | TASK [Create a database named shiv_db] ***************************************************************************************************************
+2023-12-03 19:36:11,897 p=404200 u=ssd n=ansible | ok: [db]
+2023-12-03 19:36:11,907 p=404200 u=ssd n=ansible | TASK [Create a user named shiv on dbserver] **********************************************************************************************************
+2023-12-03 19:36:30,428 p=404200 u=ssd n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be
+changed to true in community.mysql 4.0.0.
+
+2023-12-03 19:36:30,428 p=404200 u=ssd n=ansible | ok: [db]
+2023-12-03 19:36:30,436 p=404200 u=ssd n=ansible | TASK [Using debug module to print the value of db_register] ******************************************************************************************
+2023-12-03 19:36:30,460 p=404200 u=ssd n=ansible | ok: [db] => {
+    "db_register": {
+        "changed": false,
+        "failed": false,
+        "msg": "User unchanged",
+        "password_changed": false,
+        "user": " shiv",
+        "warnings": [
+            "Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in community.mysql 4.0.0."
+        ]
+    }
+}
+2023-12-03 19:36:30,485 p=404200 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 19:36:30,485 p=404200 u=ssd n=ansible | db                         : ok=9    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-03 19:36:44,428 p=409019 u=ssd n=ansible | PLAY [Uninstall the mariadb server on dbserver] ******************************************************************************************************
+2023-12-03 19:36:44,438 p=409019 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-03 19:37:00,780 p=409019 u=ssd n=ansible | ok: [db]
+2023-12-03 19:37:00,798 p=409019 u=ssd n=ansible | TASK [Uninstall the mariadb server on dbserver] ******************************************************************************************************
+2023-12-03 19:37:13,845 p=409019 u=ssd n=ansible | changed: [db]
+2023-12-03 19:37:13,869 p=409019 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-03 19:37:13,870 p=409019 u=ssd n=ansible | db                         : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
