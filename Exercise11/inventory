@@ -1,7 +1,11 @@
 all:
     hosts:
         web01: 
-            ansible_host: 18.209.162.210
+            ansible_host: 34.229.208.133
+        
+        web02:
+            ansible_host: 54.162.122.172
+            ansible_ssh_user: ubuntu
    
         db:
             ansible_host: 18.207.176.89
@@ -10,7 +14,7 @@ all:
         webserver:
             hosts:
                 web01:
-                
+                web02:
         dbserver:
             hosts:
                 db:

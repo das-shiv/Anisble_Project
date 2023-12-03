@@ -1,0 +1,32 @@
+---
+- name: Provision NTP service on ubuntu and CentOs
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install NTP service on ubuntu
+      ansible.builtin.apt:
+        name: ntp
+        state: present
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+    
+    - name: Start and enable NTP service on ubuntu 
+      ansible.builtin.service:
+        name: ntp
+        state: started
+        enabled: yes
+      when: ansible_distribution == "Ubuntu"
+
+
+    - name: Install NTP(Chrony) on CentOs
+      ansible.builtin.yum:
+        name: chrony
+        state: present
+      when: ansible_distribution == "CentOs"
+
+    - name: Start and enable NTP service on CentOs
+      ansible.builtin.service:
+        name: chronyd
+        state: started
+        enabled: yes
+      when: ansible_distribution == "CentOs"

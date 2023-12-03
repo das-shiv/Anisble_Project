@@ -1,0 +1,2 @@
+USR: group_vars_webserver_user
+COMM: Ansible is accessing the variables from group_vars_webserver

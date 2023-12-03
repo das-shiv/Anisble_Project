@@ -1,0 +1,20 @@
+---
+- name: Printing fact variables
+  hosts: all
+  become: yes
+  tasks:
+  - name: Print the OS family of remote servers
+    ansible.builtin.debug:
+      var: ansible_os_family
+
+  - name: Print the free RAM of remote servers
+    ansible.builtin.debug:
+      var: ansible_memory_mb.real.free
+
+  - name: Print the name of the processor of remote servers
+    ansible.builtin.debug:
+      var: ansible_processor[2]
+
+  
+
+  
