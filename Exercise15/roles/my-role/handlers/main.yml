@@ -1,0 +1,16 @@
+---
+# handlers file for my-role
+- name: Restart NTP service on ubuntu 
+  ansible.builtin.service:
+        name: ntp
+        state: restarted
+        enabled: yes
+  when: ansible_distribution == "Ubuntu"
+
+
+- name: Restart NTP service on CentOs
+  ansible.builtin.service:
+        name: chronyd
+        state: restarted
+        enabled: yes
+  when: ansible_distribution == "CentOS"

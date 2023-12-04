@@ -1,0 +1,159 @@
+2023-12-04 20:23:35,643 p=824550 u=ssd n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/ssd/Desktop/Ansible_Project/Exercise15/roles/my-role/tasks/main.yml': line 13, column 30, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- name: Start and enable NTP service on ubuntu
+      ansible.builtin.service:
+                             ^ here
+
+2023-12-04 20:24:32,986 p=825749 u=ssd n=ansible | playbook: provisioning.yml
+2023-12-04 20:26:17,100 p=827464 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 20:26:17,109 p=827464 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 20:26:51,796 p=827464 u=ssd n=ansible | ok: [web01]
+2023-12-04 20:27:14,434 p=827464 u=ssd n=ansible | ok: [web02]
+2023-12-04 20:27:42,262 p=827464 u=ssd n=ansible | ok: [db]
+2023-12-04 20:27:42,302 p=827464 u=ssd n=ansible | TASK [my-role : Install NTP service on ubuntu] *******************************************************************************************************
+2023-12-04 20:27:42,325 p=827464 u=ssd n=ansible | skipping: [web01]
+2023-12-04 20:28:09,373 p=827464 u=ssd n=ansible | changed: [web02]
+2023-12-04 20:28:09,389 p=827464 u=ssd n=ansible | skipping: [db]
+2023-12-04 20:28:09,398 p=827464 u=ssd n=ansible | TASK [my-role : Start and enable NTP service on ubuntu] **********************************************************************************************
+2023-12-04 20:28:09,424 p=827464 u=ssd n=ansible | skipping: [web01]
+2023-12-04 20:28:27,180 p=827464 u=ssd n=ansible | ok: [web02]
+2023-12-04 20:28:27,195 p=827464 u=ssd n=ansible | skipping: [db]
+2023-12-04 20:28:27,203 p=827464 u=ssd n=ansible | TASK [my-role : Copy chrony config file to ubuntu server] ********************************************************************************************
+2023-12-04 20:28:27,231 p=827464 u=ssd n=ansible | skipping: [web01]
+2023-12-04 20:28:48,155 p=827464 u=ssd n=ansible | ok: [web02]
+2023-12-04 20:28:48,171 p=827464 u=ssd n=ansible | skipping: [db]
+2023-12-04 20:28:48,179 p=827464 u=ssd n=ansible | TASK [my-role : Install NTP(Chrony) on CentOs] *******************************************************************************************************
+2023-12-04 20:29:12,626 p=827464 u=ssd n=ansible | changed: [web01]
+2023-12-04 20:29:12,645 p=827464 u=ssd n=ansible | skipping: [web02]
+2023-12-04 20:29:35,985 p=827464 u=ssd n=ansible | changed: [db]
+2023-12-04 20:29:36,005 p=827464 u=ssd n=ansible | TASK [my-role : Start and enable NTP service on CentOs] **********************************************************************************************
+2023-12-04 20:29:51,583 p=827464 u=ssd n=ansible | changed: [web01]
+2023-12-04 20:29:51,600 p=827464 u=ssd n=ansible | skipping: [web02]
+2023-12-04 20:30:05,038 p=827464 u=ssd n=ansible | changed: [db]
+2023-12-04 20:30:05,061 p=827464 u=ssd n=ansible | TASK [my-role : Copy chrony config file to CentOs server] ********************************************************************************************
+2023-12-04 20:30:31,909 p=827464 u=ssd n=ansible | changed: [web01]
+2023-12-04 20:30:31,925 p=827464 u=ssd n=ansible | skipping: [web02]
+2023-12-04 20:31:00,066 p=827464 u=ssd n=ansible | changed: [db]
+2023-12-04 20:31:00,129 p=827464 u=ssd n=ansible | RUNNING HANDLER [my-role : Restart NTP service on CentOs] ********************************************************************************************
+2023-12-04 20:31:17,751 p=827464 u=ssd n=ansible | changed: [web01]
+2023-12-04 20:31:32,280 p=827464 u=ssd n=ansible | changed: [db]
+2023-12-04 20:31:32,312 p=827464 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 20:31:32,312 p=827464 u=ssd n=ansible | db                         : ok=5    changed=4    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-12-04 20:31:32,312 p=827464 u=ssd n=ansible | web01                      : ok=5    changed=4    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-12-04 20:31:32,312 p=827464 u=ssd n=ansible | web02                      : ok=4    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-12-04 20:32:43,481 p=832419 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 20:32:43,491 p=832419 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 20:33:09,865 p=832419 u=ssd n=ansible | ok: [web01]
+2023-12-04 20:33:34,470 p=832419 u=ssd n=ansible | ok: [web02]
+2023-12-04 20:34:02,890 p=832419 u=ssd n=ansible | ok: [db]
+2023-12-04 20:34:02,934 p=832419 u=ssd n=ansible | TASK [my-role : Install NTP service on ubuntu] *******************************************************************************************************
+2023-12-04 20:34:02,954 p=832419 u=ssd n=ansible | skipping: [web01]
+2023-12-04 20:34:21,655 p=832419 u=ssd n=ansible | ok: [web02]
+2023-12-04 20:34:21,668 p=832419 u=ssd n=ansible | skipping: [db]
+2023-12-04 20:34:21,676 p=832419 u=ssd n=ansible | TASK [my-role : Start and enable NTP service on ubuntu] **********************************************************************************************
+2023-12-04 20:34:21,704 p=832419 u=ssd n=ansible | skipping: [web01]
+2023-12-04 20:34:38,866 p=832419 u=ssd n=ansible | ok: [web02]
+2023-12-04 20:34:38,875 p=832419 u=ssd n=ansible | skipping: [db]
+2023-12-04 20:34:38,883 p=832419 u=ssd n=ansible | TASK [my-role : Copy chrony config file to ubuntu server] ********************************************************************************************
+2023-12-04 20:34:38,903 p=832419 u=ssd n=ansible | skipping: [web01]
+2023-12-04 20:35:05,531 p=832419 u=ssd n=ansible | ok: [web02]
+2023-12-04 20:35:05,544 p=832419 u=ssd n=ansible | skipping: [db]
+2023-12-04 20:35:05,553 p=832419 u=ssd n=ansible | TASK [my-role : Install NTP(Chrony) on CentOs] *******************************************************************************************************
+2023-12-04 20:35:25,828 p=832419 u=ssd n=ansible | ok: [web01]
+2023-12-04 20:35:25,847 p=832419 u=ssd n=ansible | skipping: [web02]
+2023-12-04 20:35:47,100 p=832419 u=ssd n=ansible | ok: [db]
+2023-12-04 20:35:47,121 p=832419 u=ssd n=ansible | TASK [my-role : Start and enable NTP service on CentOs] **********************************************************************************************
+2023-12-04 20:36:01,816 p=832419 u=ssd n=ansible | ok: [web01]
+2023-12-04 20:36:01,835 p=832419 u=ssd n=ansible | skipping: [web02]
+2023-12-04 20:36:29,452 p=832419 u=ssd n=ansible | ok: [db]
+2023-12-04 20:36:29,459 p=832419 u=ssd n=ansible | TASK [my-role : Copy chrony config file to CentOs server] ********************************************************************************************
+2023-12-04 20:37:03,778 p=832419 u=ssd n=ansible | ok: [web01]
+2023-12-04 20:37:03,798 p=832419 u=ssd n=ansible | skipping: [web02]
+2023-12-04 20:37:24,533 p=832419 u=ssd n=ansible | ok: [db]
+2023-12-04 20:37:24,640 p=832419 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 20:37:24,640 p=832419 u=ssd n=ansible | db                         : ok=4    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-12-04 20:37:24,641 p=832419 u=ssd n=ansible | web01                      : ok=4    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-12-04 20:37:24,641 p=832419 u=ssd n=ansible | web02                      : ok=4    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-12-04 20:37:51,785 p=835540 u=ssd n=ansible | PLAY [Uninstall packages from Ubuntu and CentOS] *****************************************************************************************************
+2023-12-04 20:37:51,794 p=835540 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 20:38:09,272 p=835540 u=ssd n=ansible | ok: [web01]
+2023-12-04 20:38:36,767 p=835540 u=ssd n=ansible | ok: [web02]
+2023-12-04 20:39:00,921 p=835540 u=ssd n=ansible | ok: [db]
+2023-12-04 20:39:00,966 p=835540 u=ssd n=ansible | TASK [Uninstall packages from Ubuntu] ****************************************************************************************************************
+2023-12-04 20:39:00,987 p=835540 u=ssd n=ansible | skipping: [web01] => (item=ntp) 
+2023-12-04 20:39:00,992 p=835540 u=ssd n=ansible | skipping: [web01] => (item=wget) 
+2023-12-04 20:39:00,997 p=835540 u=ssd n=ansible | skipping: [web01] => (item=git) 
+2023-12-04 20:39:00,998 p=835540 u=ssd n=ansible | skipping: [web01] => (item=zip) 
+2023-12-04 20:39:00,999 p=835540 u=ssd n=ansible | skipping: [web01] => (item=unzip) 
+2023-12-04 20:39:01,006 p=835540 u=ssd n=ansible | skipping: [web01]
+2023-12-04 20:39:19,382 p=835540 u=ssd n=ansible | changed: [web02] => (item=ntp)
+2023-12-04 20:39:40,979 p=835540 u=ssd n=ansible | ok: [web02] => (item=wget)
+2023-12-04 20:39:53,681 p=835540 u=ssd n=ansible | ok: [web02] => (item=git)
+2023-12-04 20:40:05,764 p=835540 u=ssd n=ansible | ok: [web02] => (item=zip)
+2023-12-04 20:40:16,823 p=835540 u=ssd n=ansible | ok: [web02] => (item=unzip)
+2023-12-04 20:40:16,875 p=835540 u=ssd n=ansible | skipping: [db] => (item=ntp) 
+2023-12-04 20:40:16,879 p=835540 u=ssd n=ansible | skipping: [db] => (item=wget) 
+2023-12-04 20:40:16,882 p=835540 u=ssd n=ansible | skipping: [db] => (item=git) 
+2023-12-04 20:40:16,886 p=835540 u=ssd n=ansible | skipping: [db] => (item=zip) 
+2023-12-04 20:40:16,887 p=835540 u=ssd n=ansible | skipping: [db] => (item=unzip) 
+2023-12-04 20:40:16,888 p=835540 u=ssd n=ansible | skipping: [db]
+2023-12-04 20:40:16,895 p=835540 u=ssd n=ansible | TASK [Uninstall packages from CentOS] ****************************************************************************************************************
+2023-12-04 20:40:44,632 p=835540 u=ssd n=ansible | changed: [web01] => (item=chrony)
+2023-12-04 20:41:07,326 p=835540 u=ssd n=ansible | ok: [web01] => (item=wget)
+2023-12-04 20:41:30,056 p=835540 u=ssd n=ansible | ok: [web01] => (item=git)
+2023-12-04 20:41:45,180 p=835540 u=ssd n=ansible | ok: [web01] => (item=zip)
+2023-12-04 20:42:03,159 p=835540 u=ssd n=ansible | ok: [web01] => (item=unzip)
+2023-12-04 20:42:03,211 p=835540 u=ssd n=ansible | skipping: [web02] => (item=chrony) 
+2023-12-04 20:42:03,216 p=835540 u=ssd n=ansible | skipping: [web02] => (item=wget) 
+2023-12-04 20:42:03,222 p=835540 u=ssd n=ansible | skipping: [web02] => (item=git) 
+2023-12-04 20:42:03,222 p=835540 u=ssd n=ansible | skipping: [web02] => (item=zip) 
+2023-12-04 20:42:03,224 p=835540 u=ssd n=ansible | skipping: [web02] => (item=unzip) 
+2023-12-04 20:42:03,231 p=835540 u=ssd n=ansible | skipping: [web02]
+2023-12-04 20:42:34,874 p=835540 u=ssd n=ansible | changed: [db] => (item=chrony)
+2023-12-04 20:42:49,471 p=835540 u=ssd n=ansible | ok: [db] => (item=wget)
+2023-12-04 20:43:03,498 p=835540 u=ssd n=ansible | ok: [db] => (item=git)
+2023-12-04 20:43:18,663 p=835540 u=ssd n=ansible | ok: [db] => (item=zip)
+2023-12-04 20:43:35,511 p=835540 u=ssd n=ansible | ok: [db] => (item=unzip)
+2023-12-04 20:43:35,588 p=835540 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 20:43:35,588 p=835540 u=ssd n=ansible | db                         : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-04 20:43:35,588 p=835540 u=ssd n=ansible | web01                      : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-04 20:43:35,588 p=835540 u=ssd n=ansible | web02                      : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-04 20:43:53,689 p=837373 u=ssd n=ansible | ERROR! the playbook: db could not be found
+2023-12-04 20:44:02,976 p=837375 u=ssd n=ansible | ERROR! the playbook: db could not be found
+2023-12-04 20:44:22,606 p=837631 u=ssd n=ansible | ERROR! the playbook: db could not be found
+2023-12-04 20:46:40,539 p=838102 u=ssd n=ansible | [WARNING]: Unable to parse /home/ssd/Desktop/Ansible_Project/Exercise15/db as an inventory source
+
+2023-12-04 20:46:40,539 p=838102 u=ssd n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2023-12-04 20:46:40,542 p=838102 u=ssd n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2023-12-04 20:46:40,682 p=838102 u=ssd n=ansible | PLAY [Uninstall packages from Ubuntu and CentOS] *****************************************************************************************************
+2023-12-04 20:46:40,682 p=838102 u=ssd n=ansible | skipping: no hosts matched
+2023-12-04 20:46:40,682 p=838102 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 20:47:14,098 p=838240 u=ssd n=ansible | PLAY [Uninstall packages from Ubuntu and CentOS] *****************************************************************************************************
+2023-12-04 20:47:14,106 p=838240 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 20:47:49,126 p=838240 u=ssd n=ansible | ok: [db]
+2023-12-04 20:47:49,147 p=838240 u=ssd n=ansible | TASK [Uninstall packages from Ubuntu] ****************************************************************************************************************
+2023-12-04 20:47:49,168 p=838240 u=ssd n=ansible | skipping: [db] => (item=ntp) 
+2023-12-04 20:47:49,169 p=838240 u=ssd n=ansible | skipping: [db] => (item=wget) 
+2023-12-04 20:47:49,172 p=838240 u=ssd n=ansible | skipping: [db] => (item=git) 
+2023-12-04 20:47:49,176 p=838240 u=ssd n=ansible | skipping: [db] => (item=zip) 
+2023-12-04 20:47:49,176 p=838240 u=ssd n=ansible | skipping: [db] => (item=unzip) 
+2023-12-04 20:47:49,178 p=838240 u=ssd n=ansible | skipping: [db]
+2023-12-04 20:47:49,185 p=838240 u=ssd n=ansible | TASK [Uninstall packages from CentOS] ****************************************************************************************************************
+2023-12-04 20:48:06,309 p=838240 u=ssd n=ansible | ok: [db] => (item=chrony)
+2023-12-04 20:48:28,902 p=838240 u=ssd n=ansible | ok: [db] => (item=wget)
+2023-12-04 20:48:45,098 p=838240 u=ssd n=ansible | ok: [db] => (item=git)
+2023-12-04 20:49:02,511 p=838240 u=ssd n=ansible | ok: [db] => (item=zip)
+2023-12-04 20:49:16,860 p=838240 u=ssd n=ansible | ok: [db] => (item=unzip)
+2023-12-04 20:49:16,894 p=838240 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 20:49:16,895 p=838240 u=ssd n=ansible | db                         : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   

@@ -1,0 +1,7 @@
+---
+- name: Provision NTP service on ubuntu and CentOs
+  hosts: all
+  become: yes
+  roles:
+  - my-role
+    

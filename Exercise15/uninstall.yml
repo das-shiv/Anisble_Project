@@ -1,0 +1,28 @@
+---
+- name: Uninstall packages from Ubuntu and CentOS
+  hosts: all
+  become: yes
+  tasks:
+    - name: Uninstall packages from Ubuntu
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: absent
+      when: ansible_distribution == "Ubuntu"
+      loop:
+        - ntp
+        - wget
+        - git
+        - zip
+        - unzip
+
+    - name: Uninstall packages from CentOS
+      ansible.builtin.yum:
+        name: "{{ item }}"
+        state: absent
+      when: ansible_distribution == "CentOS"
+      loop:
+        - chrony
+        - wget
+        - git
+        - zip
+        - unzip
