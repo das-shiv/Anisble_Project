@@ -1,0 +1,67 @@
+---
+- name: Provision NTP service on ubuntu and CentOs
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install NTP service on ubuntu
+      ansible.builtin.apt:
+        name: ntp
+        state: present
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+    
+    - name: Start and enable NTP service on ubuntu 
+      ansible.builtin.service:
+        name: ntp
+        state: started
+        enabled: yes
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Copy chrony config file to ubuntu server
+      ansible.builtin.template:
+        src: templates/ntpconf_ubuntu
+        dest: /etc/ntp.conf
+        backup: yes
+      when: ansible_distribution == "Ubuntu"
+      notify: 
+        - Restart NTP service on ubuntu
+    
+
+    - name: Install NTP(Chrony) on CentOs
+      ansible.builtin.yum:
+        name: chrony
+        state: present
+      when: ansible_distribution == "CentOS"
+
+    - name: Start and enable NTP service on CentOs
+      ansible.builtin.service:
+        name: chronyd
+        state: started
+        enabled: yes
+      when: ansible_distribution == "CentOS"
+
+    - name: Copy chrony config file to CentOs server
+      ansible.builtin.template:
+        src: templates/ntpconf_centos
+        dest: /etc/chrony.conf
+        backup: yes
+      when: ansible_distribution == "CentOS"
+      notify: 
+        - Restart NTP service on CentOs
+      
+
+  handlers:
+    - name: Restart NTP service on ubuntu 
+      ansible.builtin.service:
+        name: ntp
+        state: restarted
+        enabled: yes
+      when: ansible_distribution == "Ubuntu"
+
+
+    - name: Restart NTP service on CentOs
+      ansible.builtin.service:
+        name: chronyd
+        state: restarted
+        enabled: yes
+      when: ansible_distribution == "CentOS"

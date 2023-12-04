@@ -1,0 +1,1 @@
+This exercise shows the use of handlers in ansible playbooks.

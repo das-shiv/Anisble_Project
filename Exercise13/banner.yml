@@ -1,0 +1,11 @@
+---
+- name: Change the welcome message on remote machines
+  hosts: all
+  become: yes
+  
+  tasks:
+    - name: Copy the welcome message to /etc/motd file
+      ansible.builtin.copy:
+        content: "THIS MACHINE IS MANAGED BY ANSIBLE"
+        dest: /etc/motd
+  

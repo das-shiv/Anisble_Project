@@ -1,0 +1,1813 @@
+2023-12-04 13:50:37,343 p=524671 u=ssd n=ansible | PLAY [Modify the /etc/motd file] *********************************************************************************************************************
+2023-12-04 13:50:37,358 p=524671 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 13:51:03,684 p=524671 u=ssd n=ansible | ok: [web01]
+2023-12-04 13:51:26,186 p=524671 u=ssd n=ansible | ok: [web02]
+2023-12-04 13:51:36,214 p=524671 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 13:51:36,287 p=524671 u=ssd n=ansible | TASK [Copy the welcome message to /etc/motd file] ****************************************************************************************************
+2023-12-04 13:52:02,651 p=524671 u=ssd n=ansible | changed: [web01]
+2023-12-04 13:52:27,135 p=524671 u=ssd n=ansible | changed: [web02]
+2023-12-04 13:52:27,185 p=524671 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 13:52:27,186 p=524671 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 13:52:27,186 p=524671 u=ssd n=ansible | web01                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 13:52:27,186 p=524671 u=ssd n=ansible | web02                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 13:53:09,842 p=528326 u=ssd n=ansible | PLAY [Install NTP service and change configuration] **************************************************************************************************
+2023-12-04 13:53:09,853 p=528326 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 13:53:31,229 p=528326 u=ssd n=ansible | ok: [web01]
+2023-12-04 13:53:52,597 p=528326 u=ssd n=ansible | ok: [web02]
+2023-12-04 13:53:52,627 p=528326 u=ssd n=ansible | TASK [Install NTP on Ubuntu] *************************************************************************************************************************
+2023-12-04 13:53:52,650 p=528326 u=ssd n=ansible | skipping: [web01] => (item=ntp) 
+2023-12-04 13:53:52,659 p=528326 u=ssd n=ansible | skipping: [web01]
+2023-12-04 13:54:21,477 p=528326 u=ssd n=ansible | changed: [web02] => (item=ntp)
+2023-12-04 13:54:21,485 p=528326 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 13:54:21,512 p=528326 u=ssd n=ansible | skipping: [web01]
+2023-12-04 13:54:34,885 p=528326 u=ssd n=ansible | ok: [web02]
+2023-12-04 13:54:34,892 p=528326 u=ssd n=ansible | TASK [Install ntp/chrony on CentOs] ******************************************************************************************************************
+2023-12-04 13:54:34,913 p=528326 u=ssd n=ansible | skipping: [web01] => (item=chrony) 
+2023-12-04 13:54:34,922 p=528326 u=ssd n=ansible | skipping: [web01]
+2023-12-04 13:54:34,934 p=528326 u=ssd n=ansible | skipping: [web02] => (item=chrony) 
+2023-12-04 13:54:34,936 p=528326 u=ssd n=ansible | skipping: [web02]
+2023-12-04 13:54:34,946 p=528326 u=ssd n=ansible | TASK [Start and enable NTP service on CentOs] ********************************************************************************************************
+2023-12-04 13:54:34,973 p=528326 u=ssd n=ansible | skipping: [web01]
+2023-12-04 13:54:34,987 p=528326 u=ssd n=ansible | skipping: [web02]
+2023-12-04 13:54:35,040 p=528326 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 13:54:35,040 p=528326 u=ssd n=ansible | web01                      : ok=1    changed=0    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 13:54:35,040 p=528326 u=ssd n=ansible | web02                      : ok=3    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-12-04 13:55:19,616 p=531932 u=ssd n=ansible | PLAY [Install NTP service and change configuration] **************************************************************************************************
+2023-12-04 13:55:19,627 p=531932 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 13:55:40,721 p=531932 u=ssd n=ansible | ok: [web01]
+2023-12-04 13:56:00,802 p=531932 u=ssd n=ansible | ok: [web02]
+2023-12-04 13:56:00,834 p=531932 u=ssd n=ansible | TASK [Install NTP on Ubuntu] *************************************************************************************************************************
+2023-12-04 13:56:00,862 p=531932 u=ssd n=ansible | skipping: [web01] => (item=ntp) 
+2023-12-04 13:56:00,872 p=531932 u=ssd n=ansible | skipping: [web01]
+2023-12-04 13:56:13,282 p=531932 u=ssd n=ansible | ok: [web02] => (item=ntp)
+2023-12-04 13:56:13,290 p=531932 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 13:56:13,320 p=531932 u=ssd n=ansible | skipping: [web01]
+2023-12-04 13:56:24,550 p=531932 u=ssd n=ansible | ok: [web02]
+2023-12-04 13:56:24,557 p=531932 u=ssd n=ansible | TASK [Install ntp/chrony on CentOs] ******************************************************************************************************************
+2023-12-04 13:56:24,584 p=531932 u=ssd n=ansible | skipping: [web01] => (item=chrony) 
+2023-12-04 13:56:24,593 p=531932 u=ssd n=ansible | skipping: [web01]
+2023-12-04 13:56:24,606 p=531932 u=ssd n=ansible | skipping: [web02] => (item=chrony) 
+2023-12-04 13:56:24,607 p=531932 u=ssd n=ansible | skipping: [web02]
+2023-12-04 13:56:24,617 p=531932 u=ssd n=ansible | TASK [Start and enable NTP service on CentOs] ********************************************************************************************************
+2023-12-04 13:56:24,649 p=531932 u=ssd n=ansible | skipping: [web01]
+2023-12-04 13:56:24,660 p=531932 u=ssd n=ansible | skipping: [web02]
+2023-12-04 13:56:24,738 p=531932 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 13:56:24,738 p=531932 u=ssd n=ansible | web01                      : ok=1    changed=0    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 13:56:24,738 p=531932 u=ssd n=ansible | web02                      : ok=3    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-12-04 14:01:30,803 p=541123 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 14:01:30,814 p=541123 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 14:01:51,255 p=541123 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:02:11,332 p=541123 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:02:21,362 p=541123 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 14:02:21,407 p=541123 u=ssd n=ansible | TASK [Install NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 14:02:21,434 p=541123 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:02:34,444 p=541123 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:02:34,452 p=541123 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 14:02:34,481 p=541123 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:02:47,144 p=541123 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:02:47,152 p=541123 u=ssd n=ansible | TASK [Install NTP(Chrony) on CentOs] *****************************************************************************************************************
+2023-12-04 14:02:47,181 p=541123 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:02:47,192 p=541123 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:02:47,202 p=541123 u=ssd n=ansible | TASK [Start and enable NTP service on CentOs] ********************************************************************************************************
+2023-12-04 14:02:47,232 p=541123 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:02:47,246 p=541123 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:02:47,300 p=541123 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 14:02:47,300 p=541123 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 14:02:47,300 p=541123 u=ssd n=ansible | web01                      : ok=1    changed=0    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 14:02:47,300 p=541123 u=ssd n=ansible | web02                      : ok=3    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-12-04 14:21:53,317 p=571953 u=ssd n=ansible | ERROR! couldn't resolve module/action 'ansible.builtin.templates'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/home/ssd/Desktop/Ansible_Project/Exercise13/provisioning.yml': line 20, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Copy chrony config file to ubuntu server
+      ^ here
+
+2023-12-04 14:24:28,683 p=575993 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 14:24:28,695 p=575993 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 14:24:52,124 p=575993 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:25:13,698 p=575993 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:25:23,727 p=575993 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 14:25:23,760 p=575993 u=ssd n=ansible | TASK [Install NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 14:25:23,789 p=575993 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:25:37,769 p=575993 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:25:37,779 p=575993 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 14:25:37,816 p=575993 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:25:50,263 p=575993 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:25:50,287 p=575993 u=ssd n=ansible | TASK [Copy chrony config file to ubuntu server] ******************************************************************************************************
+2023-12-04 14:25:50,317 p=575993 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:26:14,016 p=575993 u=ssd n=ansible | changed: [web02]
+2023-12-04 14:26:14,024 p=575993 u=ssd n=ansible | TASK [Restart NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 14:26:14,050 p=575993 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:26:26,308 p=575993 u=ssd n=ansible | changed: [web02]
+2023-12-04 14:26:26,317 p=575993 u=ssd n=ansible | TASK [Install NTP(Chrony) on CentOs] *****************************************************************************************************************
+2023-12-04 14:26:26,345 p=575993 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:26:26,355 p=575993 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:26:26,363 p=575993 u=ssd n=ansible | TASK [Start and enable NTP service on CentOs] ********************************************************************************************************
+2023-12-04 14:26:26,389 p=575993 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:26:26,402 p=575993 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:26:26,409 p=575993 u=ssd n=ansible | TASK [Copy chrony config file to CentOs server] ******************************************************************************************************
+2023-12-04 14:26:59,593 p=575993 u=ssd n=ansible | changed: [web01]
+2023-12-04 14:26:59,604 p=575993 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:26:59,613 p=575993 u=ssd n=ansible | TASK [Restart NTP service on CentOs] *****************************************************************************************************************
+2023-12-04 14:26:59,646 p=575993 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:26:59,658 p=575993 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:26:59,710 p=575993 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 14:26:59,710 p=575993 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 14:26:59,710 p=575993 u=ssd n=ansible | web01                      : ok=2    changed=1    unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
+2023-12-04 14:26:59,710 p=575993 u=ssd n=ansible | web02                      : ok=5    changed=2    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 14:31:42,634 p=587271 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 14:31:42,645 p=587271 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 14:32:09,252 p=587271 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:32:34,553 p=587271 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:32:44,582 p=587271 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 14:32:44,619 p=587271 u=ssd n=ansible | TASK [Install NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 14:32:44,649 p=587271 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:33:00,328 p=587271 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:33:00,340 p=587271 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 14:33:00,371 p=587271 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:33:12,618 p=587271 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:33:12,626 p=587271 u=ssd n=ansible | TASK [Copy chrony config file to ubuntu server] ******************************************************************************************************
+2023-12-04 14:33:12,654 p=587271 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:33:37,804 p=587271 u=ssd n=ansible | changed: [web02]
+2023-12-04 14:33:37,812 p=587271 u=ssd n=ansible | TASK [Restart NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 14:33:37,840 p=587271 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:33:50,520 p=587271 u=ssd n=ansible | changed: [web02]
+2023-12-04 14:33:50,528 p=587271 u=ssd n=ansible | TASK [Install NTP(Chrony) on CentOs] *****************************************************************************************************************
+2023-12-04 14:33:50,556 p=587271 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:33:50,567 p=587271 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:33:50,574 p=587271 u=ssd n=ansible | TASK [Start and enable NTP service on CentOs] ********************************************************************************************************
+2023-12-04 14:33:50,603 p=587271 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:33:50,615 p=587271 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:33:50,622 p=587271 u=ssd n=ansible | TASK [Copy chrony config file to CentOs server] ******************************************************************************************************
+2023-12-04 14:34:20,211 p=587271 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:34:20,222 p=587271 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:34:20,232 p=587271 u=ssd n=ansible | TASK [Restart NTP service on CentOs] *****************************************************************************************************************
+2023-12-04 14:34:20,257 p=587271 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:34:20,267 p=587271 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:34:20,315 p=587271 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 14:34:20,315 p=587271 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 14:34:20,316 p=587271 u=ssd n=ansible | web01                      : ok=2    changed=0    unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
+2023-12-04 14:34:20,316 p=587271 u=ssd n=ansible | web02                      : ok=5    changed=2    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 14:37:15,779 p=595533 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 14:37:15,791 p=595533 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 14:37:37,498 p=595533 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:37:59,324 p=595533 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:38:09,354 p=595533 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 14:38:09,398 p=595533 u=ssd n=ansible | TASK [Install NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 14:38:09,429 p=595533 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:38:29,096 p=595533 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:38:29,109 p=595533 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 14:38:29,139 p=595533 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:38:42,458 p=595533 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:38:42,517 p=595533 u=ssd n=ansible | TASK [Copy chrony config file to ubuntu server] ******************************************************************************************************
+2023-12-04 14:38:42,706 p=595533 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:39:06,993 p=595533 u=ssd n=ansible | changed: [web02]
+2023-12-04 14:39:07,003 p=595533 u=ssd n=ansible | TASK [Restart NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 14:39:07,033 p=595533 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:39:18,464 p=595533 u=ssd n=ansible | changed: [web02]
+2023-12-04 14:39:18,472 p=595533 u=ssd n=ansible | TASK [Install NTP(Chrony) on CentOs] *****************************************************************************************************************
+2023-12-04 14:39:18,504 p=595533 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:39:18,517 p=595533 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:39:18,525 p=595533 u=ssd n=ansible | TASK [Start and enable NTP service on CentOs] ********************************************************************************************************
+2023-12-04 14:39:18,558 p=595533 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:39:18,569 p=595533 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:39:18,578 p=595533 u=ssd n=ansible | TASK [Copy chrony config file to CentOs server] ******************************************************************************************************
+2023-12-04 14:39:53,905 p=595533 u=ssd n=ansible | changed: [web01]
+2023-12-04 14:39:53,918 p=595533 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:39:53,926 p=595533 u=ssd n=ansible | TASK [Restart NTP service on CentOs] *****************************************************************************************************************
+2023-12-04 14:39:53,957 p=595533 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:39:53,970 p=595533 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:39:54,025 p=595533 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 14:39:54,025 p=595533 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 14:39:54,026 p=595533 u=ssd n=ansible | web01                      : ok=2    changed=1    unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
+2023-12-04 14:39:54,026 p=595533 u=ssd n=ansible | web02                      : ok=5    changed=2    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 14:42:24,506 p=602665 u=ssd n=ansible | web02 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "172.31.38.183"
+        ],
+        "ansible_all_ipv6_addresses": [
+            "fe80::cf3:afff:fe4f:1bfd"
+        ],
+        "ansible_apparmor": {
+            "status": "enabled"
+        },
+        "ansible_architecture": "x86_64",
+        "ansible_bios_date": "08/24/2006",
+        "ansible_bios_vendor": "Xen",
+        "ansible_bios_version": "4.11.amazon",
+        "ansible_board_asset_tag": "NA",
+        "ansible_board_name": "NA",
+        "ansible_board_serial": "NA",
+        "ansible_board_vendor": "NA",
+        "ansible_board_version": "NA",
+        "ansible_chassis_asset_tag": "NA",
+        "ansible_chassis_serial": "NA",
+        "ansible_chassis_vendor": "Xen",
+        "ansible_chassis_version": "NA",
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-6.2.0-1012-aws",
+            "console": "ttyS0",
+            "nvme_core.io_timeout": "4294967295",
+            "panic": "-1",
+            "ro": true,
+            "root": "PARTUUID=46c86054-7e35-44ae-9907-238b983b8fbe"
+        },
+        "ansible_date_time": {
+            "date": "2023-12-04",
+            "day": "04",
+            "epoch": "1701681142",
+            "epoch_int": "1701681142",
+            "hour": "09",
+            "iso8601": "2023-12-04T09:12:22Z",
+            "iso8601_basic": "20231204T091222425816",
+            "iso8601_basic_short": "20231204T091222",
+            "iso8601_micro": "2023-12-04T09:12:22.425816Z",
+            "minute": "12",
+            "month": "12",
+            "second": "22",
+            "time": "09:12:22",
+            "tz": "UTC",
+            "tz_dst": "UTC",
+            "tz_offset": "+0000",
+            "weekday": "Monday",
+            "weekday_number": "1",
+            "weeknumber": "49",
+            "year": "2023"
+        },
+        "ansible_default_ipv4": {
+            "address": "172.31.38.183",
+            "alias": "eth0",
+            "broadcast": "",
+            "gateway": "172.31.32.1",
+            "interface": "eth0",
+            "macaddress": "0e:f3:af:4f:1b:fd",
+            "mtu": 9001,
+            "netmask": "255.255.240.0",
+            "network": "172.31.32.0",
+            "prefix": "20",
+            "type": "ether"
+        },
+        "ansible_default_ipv6": {},
+        "ansible_device_links": {
+            "ids": {},
+            "labels": {
+                "xvda1": [
+                    "cloudimg-rootfs"
+                ],
+                "xvda15": [
+                    "UEFI"
+                ]
+            },
+            "masters": {},
+            "uuids": {
+                "xvda1": [
+                    "4f575094-453e-450d-aeed-215d8cbcbf58"
+                ],
+                "xvda15": [
+                    "60A8-A611"
+                ]
+            }
+        },
+        "ansible_devices": {
+            "loop0": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "50352",
+                "sectorsize": "512",
+                "size": "24.59 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop1": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "113992",
+                "sectorsize": "512",
+                "size": "55.66 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop2": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "113992",
+                "sectorsize": "512",
+                "size": "55.66 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop3": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "129976",
+                "sectorsize": "512",
+                "size": "63.46 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop4": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "229272",
+                "sectorsize": "512",
+                "size": "111.95 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop5": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "83648",
+                "sectorsize": "512",
+                "size": "40.84 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop6": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "83672",
+                "sectorsize": "512",
+                "size": "40.86 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop7": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "xvda": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {
+                    "xvda1": {
+                        "holders": [],
+                        "links": {
+                            "ids": [],
+                            "labels": [
+                                "cloudimg-rootfs"
+                            ],
+                            "masters": [],
+                            "uuids": [
+                                "4f575094-453e-450d-aeed-215d8cbcbf58"
+                            ]
+                        },
+                        "sectors": "16549855",
+                        "sectorsize": 512,
+                        "size": "7.89 GB",
+                        "start": "227328",
+                        "uuid": "4f575094-453e-450d-aeed-215d8cbcbf58"
+                    },
+                    "xvda14": {
+                        "holders": [],
+                        "links": {
+                            "ids": [],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": []
+                        },
+                        "sectors": "8192",
+                        "sectorsize": 512,
+                        "size": "4.00 MB",
+                        "start": "2048",
+                        "uuid": null
+                    },
+                    "xvda15": {
+                        "holders": [],
+                        "links": {
+                            "ids": [],
+                            "labels": [
+                                "UEFI"
+                            ],
+                            "masters": [],
+                            "uuids": [
+                                "60A8-A611"
+                            ]
+                        },
+                        "sectors": "217088",
+                        "sectorsize": 512,
+                        "size": "106.00 MB",
+                        "start": "10240",
+                        "uuid": "60A8-A611"
+                    }
+                },
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "16777216",
+                "sectorsize": "512",
+                "size": "8.00 GB",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            }
+        },
+        "ansible_distribution": "Ubuntu",
+        "ansible_distribution_file_parsed": true,
+        "ansible_distribution_file_path": "/etc/os-release",
+        "ansible_distribution_file_variety": "Debian",
+        "ansible_distribution_major_version": "22",
+        "ansible_distribution_release": "jammy",
+        "ansible_distribution_version": "22.04",
+        "ansible_dns": {
+            "nameservers": [
+                "127.0.0.53"
+            ],
+            "options": {
+                "edns0": true,
+                "trust-ad": true
+            },
+            "search": [
+                "ec2.internal"
+            ]
+        },
+        "ansible_domain": "ec2.internal",
+        "ansible_effective_group_id": 0,
+        "ansible_effective_user_id": 0,
+        "ansible_env": {
+            "HOME": "/root",
+            "LANG": "C.UTF-8",
+            "LC_ALL": "en_US.UTF-8",
+            "LC_CTYPE": "en_US.UTF-8",
+            "LOGNAME": "root",
+            "MAIL": "/var/mail/root",
+            "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin",
+            "PWD": "/home/ubuntu",
+            "SHELL": "/bin/bash",
+            "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-prvsgmowxsksuwmvkymlbhrvqyujnmjm ; /usr/bin/python3 /home/ubuntu/.ansible/tmp/ansible-tmp-1701681126.0373337-602670-161060397882349/AnsiballZ_setup.py",
+            "SUDO_GID": "1000",
+            "SUDO_UID": "1000",
+            "SUDO_USER": "ubuntu",
+            "TERM": "xterm-256color",
+            "USER": "root"
+        },
+        "ansible_eth0": {
+            "active": true,
+            "device": "eth0",
+            "features": {
+                "esp_hw_offload": "off [fixed]",
+                "esp_tx_csum_hw_offload": "off [fixed]",
+                "fcoe_mtu": "off [fixed]",
+                "generic_receive_offload": "on",
+                "generic_segmentation_offload": "on",
+                "highdma": "off [fixed]",
+                "hsr_dup_offload": "off [fixed]",
+                "hsr_fwd_offload": "off [fixed]",
+                "hsr_tag_ins_offload": "off [fixed]",
+                "hsr_tag_rm_offload": "off [fixed]",
+                "hw_tc_offload": "off [fixed]",
+                "l2_fwd_offload": "off [fixed]",
+                "large_receive_offload": "off [fixed]",
+                "loopback": "off [fixed]",
+                "macsec_hw_offload": "off [fixed]",
+                "netns_local": "off [fixed]",
+                "ntuple_filters": "off [fixed]",
+                "receive_hashing": "off [fixed]",
+                "rx_all": "off [fixed]",
+                "rx_checksumming": "on [fixed]",
+                "rx_fcs": "off [fixed]",
+                "rx_gro_hw": "off [fixed]",
+                "rx_gro_list": "off",
+                "rx_udp_gro_forwarding": "off",
+                "rx_udp_tunnel_port_offload": "off [fixed]",
+                "rx_vlan_filter": "off [fixed]",
+                "rx_vlan_offload": "off [fixed]",
+                "rx_vlan_stag_filter": "off [fixed]",
+                "rx_vlan_stag_hw_parse": "off [fixed]",
+                "scatter_gather": "on",
+                "tcp_segmentation_offload": "on",
+                "tls_hw_record": "off [fixed]",
+                "tls_hw_rx_offload": "off [fixed]",
+                "tls_hw_tx_offload": "off [fixed]",
+                "tx_checksum_fcoe_crc": "off [fixed]",
+                "tx_checksum_ip_generic": "off [fixed]",
+                "tx_checksum_ipv4": "on [fixed]",
+                "tx_checksum_ipv6": "on",
+                "tx_checksum_sctp": "off [fixed]",
+                "tx_checksumming": "on",
+                "tx_esp_segmentation": "off [fixed]",
+                "tx_fcoe_segmentation": "off [fixed]",
+                "tx_gre_csum_segmentation": "off [fixed]",
+                "tx_gre_segmentation": "off [fixed]",
+                "tx_gso_list": "off [fixed]",
+                "tx_gso_partial": "off [fixed]",
+                "tx_gso_robust": "on [fixed]",
+                "tx_ipxip4_segmentation": "off [fixed]",
+                "tx_ipxip6_segmentation": "off [fixed]",
+                "tx_lockless": "off [fixed]",
+                "tx_nocache_copy": "off",
+                "tx_scatter_gather": "on",
+                "tx_scatter_gather_fraglist": "off [fixed]",
+                "tx_sctp_segmentation": "off [fixed]",
+                "tx_tcp6_segmentation": "on",
+                "tx_tcp_ecn_segmentation": "off [fixed]",
+                "tx_tcp_mangleid_segmentation": "off",
+                "tx_tcp_segmentation": "on",
+                "tx_tunnel_remcsum_segmentation": "off [fixed]",
+                "tx_udp_segmentation": "off [fixed]",
+                "tx_udp_tnl_csum_segmentation": "off [fixed]",
+                "tx_udp_tnl_segmentation": "off [fixed]",
+                "tx_vlan_offload": "off [fixed]",
+                "tx_vlan_stag_hw_insert": "off [fixed]",
+                "vlan_challenged": "off [fixed]"
+            },
+            "hw_timestamp_filters": [],
+            "ipv4": {
+                "address": "172.31.38.183",
+                "broadcast": "",
+                "netmask": "255.255.240.0",
+                "network": "172.31.32.0",
+                "prefix": "20"
+            },
+            "ipv6": [
+                {
+                    "address": "fe80::cf3:afff:fe4f:1bfd",
+                    "prefix": "64",
+                    "scope": "link"
+                }
+            ],
+            "macaddress": "0e:f3:af:4f:1b:fd",
+            "mtu": 9001,
+            "pciid": "vif-0",
+            "promisc": false,
+            "timestamping": [],
+            "type": "ether"
+        },
+        "ansible_fibre_channel_wwn": [],
+        "ansible_fips": false,
+        "ansible_form_factor": "Other",
+        "ansible_fqdn": "ip-172-31-38-183.ec2.internal",
+        "ansible_hostname": "ip-172-31-38-183",
+        "ansible_hostnqn": "",
+        "ansible_interfaces": [
+            "eth0",
+            "lo"
+        ],
+        "ansible_is_chroot": false,
+        "ansible_iscsi_iqn": "",
+        "ansible_kernel": "6.2.0-1012-aws",
+        "ansible_kernel_version": "#12~22.04.1-Ubuntu SMP Thu Sep  7 14:01:24 UTC 2023",
+        "ansible_lo": {
+            "active": true,
+            "device": "lo",
+            "features": {
+                "esp_hw_offload": "off [fixed]",
+                "esp_tx_csum_hw_offload": "off [fixed]",
+                "fcoe_mtu": "off [fixed]",
+                "generic_receive_offload": "on",
+                "generic_segmentation_offload": "on",
+                "highdma": "on [fixed]",
+                "hsr_dup_offload": "off [fixed]",
+                "hsr_fwd_offload": "off [fixed]",
+                "hsr_tag_ins_offload": "off [fixed]",
+                "hsr_tag_rm_offload": "off [fixed]",
+                "hw_tc_offload": "off [fixed]",
+                "l2_fwd_offload": "off [fixed]",
+                "large_receive_offload": "off [fixed]",
+                "loopback": "on [fixed]",
+                "macsec_hw_offload": "off [fixed]",
+                "netns_local": "on [fixed]",
+                "ntuple_filters": "off [fixed]",
+                "receive_hashing": "off [fixed]",
+                "rx_all": "off [fixed]",
+                "rx_checksumming": "on [fixed]",
+                "rx_fcs": "off [fixed]",
+                "rx_gro_hw": "off [fixed]",
+                "rx_gro_list": "off",
+                "rx_udp_gro_forwarding": "off",
+                "rx_udp_tunnel_port_offload": "off [fixed]",
+                "rx_vlan_filter": "off [fixed]",
+                "rx_vlan_offload": "off [fixed]",
+                "rx_vlan_stag_filter": "off [fixed]",
+                "rx_vlan_stag_hw_parse": "off [fixed]",
+                "scatter_gather": "on",
+                "tcp_segmentation_offload": "on",
+                "tls_hw_record": "off [fixed]",
+                "tls_hw_rx_offload": "off [fixed]",
+                "tls_hw_tx_offload": "off [fixed]",
+                "tx_checksum_fcoe_crc": "off [fixed]",
+                "tx_checksum_ip_generic": "on [fixed]",
+                "tx_checksum_ipv4": "off [fixed]",
+                "tx_checksum_ipv6": "off [fixed]",
+                "tx_checksum_sctp": "on [fixed]",
+                "tx_checksumming": "on",
+                "tx_esp_segmentation": "off [fixed]",
+                "tx_fcoe_segmentation": "off [fixed]",
+                "tx_gre_csum_segmentation": "off [fixed]",
+                "tx_gre_segmentation": "off [fixed]",
+                "tx_gso_list": "on",
+                "tx_gso_partial": "off [fixed]",
+                "tx_gso_robust": "off [fixed]",
+                "tx_ipxip4_segmentation": "off [fixed]",
+                "tx_ipxip6_segmentation": "off [fixed]",
+                "tx_lockless": "on [fixed]",
+                "tx_nocache_copy": "off [fixed]",
+                "tx_scatter_gather": "on [fixed]",
+                "tx_scatter_gather_fraglist": "on [fixed]",
+                "tx_sctp_segmentation": "on",
+                "tx_tcp6_segmentation": "on",
+                "tx_tcp_ecn_segmentation": "on",
+                "tx_tcp_mangleid_segmentation": "on",
+                "tx_tcp_segmentation": "on",
+                "tx_tunnel_remcsum_segmentation": "off [fixed]",
+                "tx_udp_segmentation": "on",
+                "tx_udp_tnl_csum_segmentation": "off [fixed]",
+                "tx_udp_tnl_segmentation": "off [fixed]",
+                "tx_vlan_offload": "off [fixed]",
+                "tx_vlan_stag_hw_insert": "off [fixed]",
+                "vlan_challenged": "on [fixed]"
+            },
+            "hw_timestamp_filters": [],
+            "ipv4": {
+                "address": "127.0.0.1",
+                "broadcast": "",
+                "netmask": "255.0.0.0",
+                "network": "127.0.0.0",
+                "prefix": "8"
+            },
+            "ipv6": [
+                {
+                    "address": "::1",
+                    "prefix": "128",
+                    "scope": "host"
+                }
+            ],
+            "mtu": 65536,
+            "promisc": false,
+            "timestamping": [],
+            "type": "loopback"
+        },
+        "ansible_loadavg": {
+            "15m": 0.0,
+            "1m": 0.0,
+            "5m": 0.00830078125
+        },
+        "ansible_local": {},
+        "ansible_locally_reachable_ips": {
+            "ipv4": [
+                "127.0.0.0/8",
+                "127.0.0.1",
+                "172.31.38.183"
+            ],
+            "ipv6": [
+                "::1",
+                "fe80::cf3:afff:fe4f:1bfd"
+            ]
+        },
+        "ansible_lsb": {
+            "codename": "jammy",
+            "description": "Ubuntu 22.04.3 LTS",
+            "id": "Ubuntu",
+            "major_release": "22",
+            "release": "22.04"
+        },
+        "ansible_lvm": {
+            "lvs": {},
+            "pvs": {},
+            "vgs": {}
+        },
+        "ansible_machine": "x86_64",
+        "ansible_machine_id": "27aa258c2934489786a7eec97025d59f",
+        "ansible_memfree_mb": 222,
+        "ansible_memory_mb": {
+            "nocache": {
+                "free": 739,
+                "used": 210
+            },
+            "real": {
+                "free": 222,
+                "total": 949,
+                "used": 727
+            },
+            "swap": {
+                "cached": 0,
+                "free": 0,
+                "total": 0,
+                "used": 0
+            }
+        },
+        "ansible_memtotal_mb": 949,
+        "ansible_mounts": [
+            {
+                "block_available": 1498109,
+                "block_size": 4096,
+                "block_total": 1985394,
+                "block_used": 487285,
+                "device": "/dev/root",
+                "fstype": "ext4",
+                "inode_available": 958526,
+                "inode_total": 1032192,
+                "inode_used": 73666,
+                "mount": "/",
+                "options": "rw,relatime,discard,errors=remount-ro",
+                "size_available": 6136254464,
+                "size_total": 8132173824,
+                "uuid": "4f575094-453e-450d-aeed-215d8cbcbf58"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 197,
+                "block_used": 197,
+                "device": "/dev/loop0",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 16,
+                "inode_used": 16,
+                "mount": "/snap/amazon-ssm-agent/7528",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 25821184,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 446,
+                "block_used": 446,
+                "device": "/dev/loop1",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 10944,
+                "inode_used": 10944,
+                "mount": "/snap/core18/2790",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 58458112,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 446,
+                "block_used": 446,
+                "device": "/dev/loop2",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 10944,
+                "inode_used": 10944,
+                "mount": "/snap/core18/2796",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 58458112,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 508,
+                "block_used": 508,
+                "device": "/dev/loop3",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 11991,
+                "inode_used": 11991,
+                "mount": "/snap/core20/2015",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 66584576,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 896,
+                "block_used": 896,
+                "device": "/dev/loop4",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 873,
+                "inode_used": 873,
+                "mount": "/snap/lxd/24322",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 117440512,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 327,
+                "block_used": 327,
+                "device": "/dev/loop5",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 658,
+                "inode_used": 658,
+                "mount": "/snap/snapd/20092",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 42860544,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 327,
+                "block_used": 327,
+                "device": "/dev/loop6",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 658,
+                "inode_used": 658,
+                "mount": "/snap/snapd/20290",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 42860544,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 201353,
+                "block_size": 512,
+                "block_total": 213716,
+                "block_used": 12363,
+                "device": "/dev/xvda15",
+                "fstype": "vfat",
+                "inode_available": 0,
+                "inode_total": 0,
+                "inode_used": 0,
+                "mount": "/boot/efi",
+                "options": "rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro",
+                "size_available": 103092736,
+                "size_total": 109422592,
+                "uuid": "60A8-A611"
+            }
+        ],
+        "ansible_nodename": "ip-172-31-38-183",
+        "ansible_os_family": "Debian",
+        "ansible_pkg_mgr": "apt",
+        "ansible_proc_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-6.2.0-1012-aws",
+            "console": [
+                "tty1",
+                "ttyS0"
+            ],
+            "nvme_core.io_timeout": "4294967295",
+            "panic": "-1",
+            "ro": true,
+            "root": "PARTUUID=46c86054-7e35-44ae-9907-238b983b8fbe"
+        },
+        "ansible_processor": [
+            "0",
+            "GenuineIntel",
+            "Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"
+        ],
+        "ansible_processor_cores": 1,
+        "ansible_processor_count": 1,
+        "ansible_processor_nproc": 1,
+        "ansible_processor_threads_per_core": 1,
+        "ansible_processor_vcpus": 1,
+        "ansible_product_name": "HVM domU",
+        "ansible_product_serial": "ec2df1de-333f-1dbc-aac8-e3016dc6bb9b",
+        "ansible_product_uuid": "ec2df1de-333f-1dbc-aac8-e3016dc6bb9b",
+        "ansible_product_version": "4.11.amazon",
+        "ansible_python": {
+            "executable": "/usr/bin/python3",
+            "has_sslcontext": true,
+            "type": "cpython",
+            "version": {
+                "major": 3,
+                "micro": 12,
+                "minor": 10,
+                "releaselevel": "final",
+                "serial": 0
+            },
+            "version_info": [
+                3,
+                10,
+                12,
+                "final",
+                0
+            ]
+        },
+        "ansible_python_version": "3.10.12",
+        "ansible_real_group_id": 0,
+        "ansible_real_user_id": 0,
+        "ansible_selinux": {
+            "status": "disabled"
+        },
+        "ansible_selinux_python_present": true,
+        "ansible_service_mgr": "systemd",
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANjas3cZTObCI1ChG+I6sLwrch/7ISOhJ2Y5kS9g4EPlVYrT2LFh/q2nZWq73Z45AYi/sWuZO1pn2bNLP0misoSnqzDyZpSrzAw25NFtsqAc6ECdtJLNADc58gfizr5djlkw0biWKWgwupsGZwtmEtVJgxIas+fkX/YRkNGaTmGDAAAAFQCBqamL6f0qBdFqf+8y7AyKUlXCSwAAAIEAhZOkep5oBe9Qgbk0iTGqys6NrSiWlffDBTOVHJZ7nK5AWVSs1cTkwCvn2g5sy06lNTQdL82nEuXPSpMAVGT3R4TOToaQLuWO6DCvuDBkEhVjTIjctRrZb+GciZYBN6UqA3aC4V8/y+ATDP2jsP7OUAfYZUdt/9gn4ymZwcrn8p4AAACARY7C7ol6NThkUkQwNI0bYHhOX4AGqnW9um8M6uov9RvxZek+Yx2VYBOB/n9mlOw8+oI1duKqbpsUXtxNzTDkl8unC1161ho9R8cY0Vb1PnQ/r6BOUzvNzQk56toHG7St37ElfcePMAtEfXmZ7yuCMq51bbJ8Tv2Mf3kZGVVCIvc=",
+        "ansible_ssh_host_key_dsa_public_keytype": "ssh-dss",
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLVnWlBnac7OG1KVwEaZgp7dWSEHN6hxyquQ04E6ay+bRPP2jaqQbT7IT+w8Im8LYjsqQcmEZUv+kaFlHPrZKHw=",
+        "ansible_ssh_host_key_ecdsa_public_keytype": "ecdsa-sha2-nistp256",
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIE58T/sB/A4PgfdWkw1vtp1qt/IR/Fm1gWbhKP2741iv",
+        "ansible_ssh_host_key_ed25519_public_keytype": "ssh-ed25519",
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQCzW1tXz+e47CA4hSj2ljZ6OB0Wala6iLe3Q8LTs9+IBFQQMDEutCGgqQvCLbn298VqFVGXwPkTCaOGBTbwrlUSB/T9cRO1MHJqxjm4ao5zOPFnNfpKhBEOTFlis0q2YCM4Jvl296egRWaiSCtex94BXJPY3Jc7OnLokla4pqcDWjFUn3/TzS9D2RaLKELSpVJS8ByP/N+n7kV2aBxuXhpR3DWPXyGIrnYoWv7sG36LdLO7e4cu4NcExQgO5GJqXXDgmQ1rEtoFh8ovkblTDyakf4KnvXoBeKxsiOyxk0AcYHQrVxkIF8p8HUc0qp1tjG0Vuv6l6YSjgfU24wpv2j1w/Qd9lgeeU5VE3tTMB61agkHULlcwaw+dyZoYWOt3NsGJTgoJaEXmjBZcD1Lvw25bi4hp4SomtkYrTIuW3MEU2lCfOpIarIfkUa7XVEK/GzFSplyRpzK3SK2TO9OrTdlwIggZXJvO5MLdk/DnDKO/t0xqysl5H22xgTU1wvNVO4c=",
+        "ansible_ssh_host_key_rsa_public_keytype": "ssh-rsa",
+        "ansible_swapfree_mb": 0,
+        "ansible_swaptotal_mb": 0,
+        "ansible_system": "Linux",
+        "ansible_system_capabilities": [],
+        "ansible_system_capabilities_enforced": "False",
+        "ansible_system_vendor": "Xen",
+        "ansible_uptime_seconds": 3276,
+        "ansible_user_dir": "/root",
+        "ansible_user_gecos": "root",
+        "ansible_user_gid": 0,
+        "ansible_user_id": "root",
+        "ansible_user_shell": "/bin/bash",
+        "ansible_user_uid": 0,
+        "ansible_userspace_architecture": "x86_64",
+        "ansible_userspace_bits": "64",
+        "ansible_virtualization_role": "guest",
+        "ansible_virtualization_tech_guest": [
+            "xen"
+        ],
+        "ansible_virtualization_tech_host": [],
+        "ansible_virtualization_type": "xen",
+        "discovered_interpreter_python": "/usr/bin/python3",
+        "gather_subset": [
+            "all"
+        ],
+        "module_setup": true
+    },
+    "changed": false
+}
+2023-12-04 14:43:30,199 p=603690 u=ssd n=ansible | web01 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "172.31.32.103"
+        ],
+        "ansible_all_ipv6_addresses": [
+            "fe80::cb6:eaff:fecb:9e97"
+        ],
+        "ansible_apparmor": {
+            "status": "disabled"
+        },
+        "ansible_architecture": "x86_64",
+        "ansible_bios_date": "08/24/2006",
+        "ansible_bios_vendor": "Xen",
+        "ansible_bios_version": "4.11.amazon",
+        "ansible_board_asset_tag": "NA",
+        "ansible_board_name": "NA",
+        "ansible_board_serial": "NA",
+        "ansible_board_vendor": "NA",
+        "ansible_board_version": "NA",
+        "ansible_chassis_asset_tag": "NA",
+        "ansible_chassis_serial": "NA",
+        "ansible_chassis_vendor": "Xen",
+        "ansible_chassis_version": "NA",
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "(hd0,gpt2)/boot/vmlinuz-5.14.0-229.el9.x86_64",
+            "console": "tty0",
+            "crashkernel": "1G-4G:192M,4G-64G:256M,64G-:512M",
+            "net.ifnames": "0",
+            "nvme_core.io_timeout": "4294967295",
+            "rd.blacklist": "nouveau",
+            "ro": true,
+            "root": "UUID=d5ae404e-d570-441c-bd68-fb544b5ebbb9"
+        },
+        "ansible_date_time": {
+            "date": "2023-12-04",
+            "day": "04",
+            "epoch": "1701681208",
+            "epoch_int": "1701681208",
+            "hour": "09",
+            "iso8601": "2023-12-04T09:13:28Z",
+            "iso8601_basic": "20231204T091328517544",
+            "iso8601_basic_short": "20231204T091328",
+            "iso8601_micro": "2023-12-04T09:13:28.517544Z",
+            "minute": "13",
+            "month": "12",
+            "second": "28",
+            "time": "09:13:28",
+            "tz": "UTC",
+            "tz_dst": "UTC",
+            "tz_offset": "+0000",
+            "weekday": "Monday",
+            "weekday_number": "1",
+            "weeknumber": "49",
+            "year": "2023"
+        },
+        "ansible_default_ipv4": {
+            "address": "172.31.32.103",
+            "alias": "eth0",
+            "broadcast": "172.31.47.255",
+            "gateway": "172.31.32.1",
+            "interface": "eth0",
+            "macaddress": "0e:b6:ea:cb:9e:97",
+            "mtu": 9001,
+            "netmask": "255.255.240.0",
+            "network": "172.31.32.0",
+            "prefix": "20",
+            "type": "ether"
+        },
+        "ansible_default_ipv6": {},
+        "ansible_device_links": {
+            "ids": {},
+            "labels": {},
+            "masters": {},
+            "uuids": {
+                "xvda2": [
+                    "d5ae404e-d570-441c-bd68-fb544b5ebbb9"
+                ]
+            }
+        },
+        "ansible_devices": {
+            "xvda": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {
+                    "xvda1": {
+                        "holders": [],
+                        "links": {
+                            "ids": [],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": []
+                        },
+                        "sectors": "2048",
+                        "sectorsize": 512,
+                        "size": "1.00 MB",
+                        "start": "2048",
+                        "uuid": null
+                    },
+                    "xvda2": {
+                        "holders": [],
+                        "links": {
+                            "ids": [],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": [
+                                "d5ae404e-d570-441c-bd68-fb544b5ebbb9"
+                            ]
+                        },
+                        "sectors": "20967391",
+                        "sectorsize": 512,
+                        "size": "10.00 GB",
+                        "start": "4096",
+                        "uuid": "d5ae404e-d570-441c-bd68-fb544b5ebbb9"
+                    }
+                },
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "20971520",
+                "sectorsize": "512",
+                "size": "10.00 GB",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            }
+        },
+        "ansible_distribution": "CentOS",
+        "ansible_distribution_file_parsed": true,
+        "ansible_distribution_file_path": "/etc/centos-release",
+        "ansible_distribution_file_variety": "CentOS",
+        "ansible_distribution_major_version": "9",
+        "ansible_distribution_release": "Stream",
+        "ansible_distribution_version": "9",
+        "ansible_dns": {
+            "nameservers": [
+                "172.31.0.2"
+            ],
+            "search": [
+                "ec2.internal"
+            ]
+        },
+        "ansible_domain": "ec2.internal",
+        "ansible_effective_group_id": 0,
+        "ansible_effective_user_id": 0,
+        "ansible_env": {
+            "HOME": "/root",
+            "LANG": "en_US.UTF-8",
+            "LOGNAME": "root",
+            "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.m4a=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.oga=01;36:*.opus=01;36:*.spx=01;36:*.xspf=01;36:",
+            "MAIL": "/var/mail/root",
+            "PATH": "/sbin:/bin:/usr/sbin:/usr/bin",
+            "PWD": "/home/ec2-user",
+            "SHELL": "/bin/bash",
+            "SHLVL": "0",
+            "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-jngealmnmgafbgvcohnmlsfymvybprbu ; /usr/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1701681190.7244482-603695-64297399462312/AnsiballZ_setup.py",
+            "SUDO_GID": "1000",
+            "SUDO_UID": "1000",
+            "SUDO_USER": "ec2-user",
+            "TERM": "xterm-256color",
+            "USER": "root",
+            "_": "/usr/bin/python3"
+        },
+        "ansible_eth0": {
+            "active": true,
+            "device": "eth0",
+            "features": {
+                "esp_hw_offload": "off [fixed]",
+                "esp_tx_csum_hw_offload": "off [fixed]",
+                "fcoe_mtu": "off [fixed]",
+                "generic_receive_offload": "on",
+                "generic_segmentation_offload": "on",
+                "highdma": "off [fixed]",
+                "hsr_dup_offload": "off [fixed]",
+                "hsr_fwd_offload": "off [fixed]",
+                "hsr_tag_ins_offload": "off [fixed]",
+                "hsr_tag_rm_offload": "off [fixed]",
+                "hw_tc_offload": "off [fixed]",
+                "l2_fwd_offload": "off [fixed]",
+                "large_receive_offload": "off [fixed]",
+                "loopback": "off [fixed]",
+                "macsec_hw_offload": "off [fixed]",
+                "netns_local": "off [fixed]",
+                "ntuple_filters": "off [fixed]",
+                "receive_hashing": "off [fixed]",
+                "rx_all": "off [fixed]",
+                "rx_checksumming": "on [fixed]",
+                "rx_fcs": "off [fixed]",
+                "rx_gro_hw": "off [fixed]",
+                "rx_gro_list": "off",
+                "rx_udp_gro_forwarding": "off",
+                "rx_udp_tunnel_port_offload": "off [fixed]",
+                "rx_vlan_filter": "off [fixed]",
+                "rx_vlan_offload": "off [fixed]",
+                "rx_vlan_stag_filter": "off [fixed]",
+                "rx_vlan_stag_hw_parse": "off [fixed]",
+                "scatter_gather": "on",
+                "tcp_segmentation_offload": "on",
+                "tls_hw_record": "off [fixed]",
+                "tls_hw_rx_offload": "off [fixed]",
+                "tls_hw_tx_offload": "off [fixed]",
+                "tx_checksum_fcoe_crc": "off [fixed]",
+                "tx_checksum_ip_generic": "off [fixed]",
+                "tx_checksum_ipv4": "on [fixed]",
+                "tx_checksum_ipv6": "on",
+                "tx_checksum_sctp": "off [fixed]",
+                "tx_checksumming": "on",
+                "tx_esp_segmentation": "off [fixed]",
+                "tx_fcoe_segmentation": "off [fixed]",
+                "tx_gre_csum_segmentation": "off [fixed]",
+                "tx_gre_segmentation": "off [fixed]",
+                "tx_gso_list": "off [fixed]",
+                "tx_gso_partial": "off [fixed]",
+                "tx_gso_robust": "on [fixed]",
+                "tx_ipxip4_segmentation": "off [fixed]",
+                "tx_ipxip6_segmentation": "off [fixed]",
+                "tx_lockless": "off [fixed]",
+                "tx_nocache_copy": "off",
+                "tx_scatter_gather": "on",
+                "tx_scatter_gather_fraglist": "off [fixed]",
+                "tx_sctp_segmentation": "off [fixed]",
+                "tx_tcp6_segmentation": "on",
+                "tx_tcp_ecn_segmentation": "off [fixed]",
+                "tx_tcp_mangleid_segmentation": "off",
+                "tx_tcp_segmentation": "on",
+                "tx_tunnel_remcsum_segmentation": "off [fixed]",
+                "tx_udp_segmentation": "off [fixed]",
+                "tx_udp_tnl_csum_segmentation": "off [fixed]",
+                "tx_udp_tnl_segmentation": "off [fixed]",
+                "tx_vlan_offload": "off [fixed]",
+                "tx_vlan_stag_hw_insert": "off [fixed]",
+                "vlan_challenged": "off [fixed]"
+            },
+            "hw_timestamp_filters": [],
+            "ipv4": {
+                "address": "172.31.32.103",
+                "broadcast": "172.31.47.255",
+                "netmask": "255.255.240.0",
+                "network": "172.31.32.0",
+                "prefix": "20"
+            },
+            "ipv6": [
+                {
+                    "address": "fe80::cb6:eaff:fecb:9e97",
+                    "prefix": "64",
+                    "scope": "link"
+                }
+            ],
+            "macaddress": "0e:b6:ea:cb:9e:97",
+            "module": "xen_netfront",
+            "mtu": 9001,
+            "pciid": "vif-0",
+            "promisc": false,
+            "timestamping": [],
+            "type": "ether"
+        },
+        "ansible_fibre_channel_wwn": [],
+        "ansible_fips": false,
+        "ansible_form_factor": "Other",
+        "ansible_fqdn": "ip-172-31-32-103.ec2.internal",
+        "ansible_hostname": "ip-172-31-32-103",
+        "ansible_hostnqn": "",
+        "ansible_interfaces": [
+            "eth0",
+            "lo"
+        ],
+        "ansible_is_chroot": false,
+        "ansible_iscsi_iqn": "",
+        "ansible_kernel": "5.14.0-229.el9.x86_64",
+        "ansible_kernel_version": "#1 SMP PREEMPT_DYNAMIC Thu Jan 5 15:30:18 UTC 2023",
+        "ansible_lo": {
+            "active": true,
+            "device": "lo",
+            "features": {
+                "esp_hw_offload": "off [fixed]",
+                "esp_tx_csum_hw_offload": "off [fixed]",
+                "fcoe_mtu": "off [fixed]",
+                "generic_receive_offload": "on",
+                "generic_segmentation_offload": "on",
+                "highdma": "on [fixed]",
+                "hsr_dup_offload": "off [fixed]",
+                "hsr_fwd_offload": "off [fixed]",
+                "hsr_tag_ins_offload": "off [fixed]",
+                "hsr_tag_rm_offload": "off [fixed]",
+                "hw_tc_offload": "off [fixed]",
+                "l2_fwd_offload": "off [fixed]",
+                "large_receive_offload": "off [fixed]",
+                "loopback": "on [fixed]",
+                "macsec_hw_offload": "off [fixed]",
+                "netns_local": "on [fixed]",
+                "ntuple_filters": "off [fixed]",
+                "receive_hashing": "off [fixed]",
+                "rx_all": "off [fixed]",
+                "rx_checksumming": "on [fixed]",
+                "rx_fcs": "off [fixed]",
+                "rx_gro_hw": "off [fixed]",
+                "rx_gro_list": "off",
+                "rx_udp_gro_forwarding": "off",
+                "rx_udp_tunnel_port_offload": "off [fixed]",
+                "rx_vlan_filter": "off [fixed]",
+                "rx_vlan_offload": "off [fixed]",
+                "rx_vlan_stag_filter": "off [fixed]",
+                "rx_vlan_stag_hw_parse": "off [fixed]",
+                "scatter_gather": "on",
+                "tcp_segmentation_offload": "on",
+                "tls_hw_record": "off [fixed]",
+                "tls_hw_rx_offload": "off [fixed]",
+                "tls_hw_tx_offload": "off [fixed]",
+                "tx_checksum_fcoe_crc": "off [fixed]",
+                "tx_checksum_ip_generic": "on [fixed]",
+                "tx_checksum_ipv4": "off [fixed]",
+                "tx_checksum_ipv6": "off [fixed]",
+                "tx_checksum_sctp": "on [fixed]",
+                "tx_checksumming": "on",
+                "tx_esp_segmentation": "off [fixed]",
+                "tx_fcoe_segmentation": "off [fixed]",
+                "tx_gre_csum_segmentation": "off [fixed]",
+                "tx_gre_segmentation": "off [fixed]",
+                "tx_gso_list": "on",
+                "tx_gso_partial": "off [fixed]",
+                "tx_gso_robust": "off [fixed]",
+                "tx_ipxip4_segmentation": "off [fixed]",
+                "tx_ipxip6_segmentation": "off [fixed]",
+                "tx_lockless": "on [fixed]",
+                "tx_nocache_copy": "off [fixed]",
+                "tx_scatter_gather": "on [fixed]",
+                "tx_scatter_gather_fraglist": "on [fixed]",
+                "tx_sctp_segmentation": "on",
+                "tx_tcp6_segmentation": "on",
+                "tx_tcp_ecn_segmentation": "on",
+                "tx_tcp_mangleid_segmentation": "on",
+                "tx_tcp_segmentation": "on",
+                "tx_tunnel_remcsum_segmentation": "off [fixed]",
+                "tx_udp_segmentation": "on",
+                "tx_udp_tnl_csum_segmentation": "off [fixed]",
+                "tx_udp_tnl_segmentation": "off [fixed]",
+                "tx_vlan_offload": "off [fixed]",
+                "tx_vlan_stag_hw_insert": "off [fixed]",
+                "vlan_challenged": "on [fixed]"
+            },
+            "hw_timestamp_filters": [],
+            "ipv4": {
+                "address": "127.0.0.1",
+                "broadcast": "",
+                "netmask": "255.0.0.0",
+                "network": "127.0.0.0",
+                "prefix": "8"
+            },
+            "ipv6": [
+                {
+                    "address": "::1",
+                    "prefix": "128",
+                    "scope": "host"
+                }
+            ],
+            "mtu": 65536,
+            "promisc": false,
+            "timestamping": [],
+            "type": "loopback"
+        },
+        "ansible_loadavg": {
+            "15m": 0.0,
+            "1m": 0.0,
+            "5m": 0.0
+        },
+        "ansible_local": {},
+        "ansible_locally_reachable_ips": {
+            "ipv4": [
+                "127.0.0.0/8",
+                "127.0.0.1",
+                "172.31.32.103"
+            ],
+            "ipv6": [
+                "::1",
+                "fe80::cb6:eaff:fecb:9e97"
+            ]
+        },
+        "ansible_lsb": {},
+        "ansible_lvm": "N/A",
+        "ansible_machine": "x86_64",
+        "ansible_machine_id": "db2452fd97f651094dac231b367064ae",
+        "ansible_memfree_mb": 331,
+        "ansible_memory_mb": {
+            "nocache": {
+                "free": 577,
+                "used": 191
+            },
+            "real": {
+                "free": 331,
+                "total": 768,
+                "used": 437
+            },
+            "swap": {
+                "cached": 0,
+                "free": 0,
+                "total": 0,
+                "used": 0
+            }
+        },
+        "ansible_memtotal_mb": 768,
+        "ansible_mounts": [
+            {
+                "block_available": 2283396,
+                "block_size": 4096,
+                "block_total": 2618363,
+                "block_used": 334967,
+                "device": "/dev/xvda2",
+                "fstype": "xfs",
+                "inode_available": 5209703,
+                "inode_total": 5241792,
+                "inode_used": 32089,
+                "mount": "/",
+                "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota",
+                "size_available": 9352790016,
+                "size_total": 10724814848,
+                "uuid": "d5ae404e-d570-441c-bd68-fb544b5ebbb9"
+            }
+        ],
+        "ansible_nodename": "ip-172-31-32-103.ec2.internal",
+        "ansible_os_family": "RedHat",
+        "ansible_pkg_mgr": "dnf",
+        "ansible_proc_cmdline": {
+            "BOOT_IMAGE": "(hd0,gpt2)/boot/vmlinuz-5.14.0-229.el9.x86_64",
+            "console": [
+                "ttyS0,115200n8",
+                "tty0"
+            ],
+            "crashkernel": "1G-4G:192M,4G-64G:256M,64G-:512M",
+            "net.ifnames": "0",
+            "nvme_core.io_timeout": "4294967295",
+            "rd.blacklist": "nouveau",
+            "ro": true,
+            "root": "UUID=d5ae404e-d570-441c-bd68-fb544b5ebbb9"
+        },
+        "ansible_processor": [
+            "0",
+            "GenuineIntel",
+            "Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"
+        ],
+        "ansible_processor_cores": 1,
+        "ansible_processor_count": 1,
+        "ansible_processor_nproc": 1,
+        "ansible_processor_threads_per_core": 1,
+        "ansible_processor_vcpus": 1,
+        "ansible_product_name": "HVM domU",
+        "ansible_product_serial": "ec2c5f40-0db4-6157-2b2b-8abefd2c0b63",
+        "ansible_product_uuid": "ec2c5f40-0db4-6157-2b2b-8abefd2c0b63",
+        "ansible_product_version": "4.11.amazon",
+        "ansible_python": {
+            "executable": "/usr/bin/python3",
+            "has_sslcontext": true,
+            "type": "cpython",
+            "version": {
+                "major": 3,
+                "micro": 16,
+                "minor": 9,
+                "releaselevel": "final",
+                "serial": 0
+            },
+            "version_info": [
+                3,
+                9,
+                16,
+                "final",
+                0
+            ]
+        },
+        "ansible_python_version": "3.9.16",
+        "ansible_real_group_id": 0,
+        "ansible_real_user_id": 0,
+        "ansible_selinux": {
+            "config_mode": "enforcing",
+            "mode": "enforcing",
+            "policyvers": 33,
+            "status": "enabled",
+            "type": "targeted"
+        },
+        "ansible_selinux_python_present": true,
+        "ansible_service_mgr": "systemd",
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPRRvnvhziATZ4sAM7Bj/pGI5f5169ihur3sIkyT10DGoxdVBS1CpfRkm5JHvUBKYFjrL6/waGX2SPtJxQaMZ/w=",
+        "ansible_ssh_host_key_ecdsa_public_keytype": "ecdsa-sha2-nistp256",
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIL+j5XGJLodp0YcZM8nbHrIZfM6DH2/OtYAwqH1PxQ1r",
+        "ansible_ssh_host_key_ed25519_public_keytype": "ssh-ed25519",
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQDYHIJMvZRYrt6mBPg3gh4sP5tvBH8N+Mmee232U7qPcEPRURiktbSRD8YrNJ2GBzmTJOHvFYlvHiUJU/61QBHV1BMS7aOZgQ0ZtF2qKrcT8MpubBsUDwLQAtUuEkR2yAE/Bdazl0/ApNoVinOSVc/UU4bbrLJyNUq4qdBA95DYaZmn8XJZV6kFwC+GCEyHVeebIxM91P8sacQBvmFMMVXDOMrk0+CdPBfHmdx4FmPdf8B01HSra0mYsiA3MJVoCNLDUQdDGDvwzls5v3XdBHPP+rWfbhMrBVML4TDmf1YzY1Rnlj1WDX38e9wcOA1b6vAhp/PMew2y1+tqc+oMbhIa9jokJl+rdzRCJ/cer3+dI27129256SxgTmJuNAge2an5hI8gpNu40K5fXHH8X4/DyjE6e8QNxSkgh2hgYcfEDXgVgINivBWiC8OAOF22i8tEHpi3mMDhxs1+mgb7a3CcbOR8IR0UvhR5LHFDfIESkFdCKOn9agjYrboenFUDyVU=",
+        "ansible_ssh_host_key_rsa_public_keytype": "ssh-rsa",
+        "ansible_swapfree_mb": 0,
+        "ansible_swaptotal_mb": 0,
+        "ansible_system": "Linux",
+        "ansible_system_capabilities": [],
+        "ansible_system_capabilities_enforced": "False",
+        "ansible_system_vendor": "Xen",
+        "ansible_uptime_seconds": 3340,
+        "ansible_user_dir": "/root",
+        "ansible_user_gecos": "root",
+        "ansible_user_gid": 0,
+        "ansible_user_id": "root",
+        "ansible_user_shell": "/bin/bash",
+        "ansible_user_uid": 0,
+        "ansible_userspace_architecture": "x86_64",
+        "ansible_userspace_bits": "64",
+        "ansible_virtualization_role": "guest",
+        "ansible_virtualization_tech_guest": [
+            "xen"
+        ],
+        "ansible_virtualization_tech_host": [],
+        "ansible_virtualization_type": "xen",
+        "discovered_interpreter_python": "/usr/bin/python3",
+        "gather_subset": [
+            "all"
+        ],
+        "module_setup": true
+    },
+    "changed": false
+}
+2023-12-04 14:44:44,860 p=606759 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 14:44:44,871 p=606759 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 14:45:09,540 p=606759 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:45:33,106 p=606759 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:45:43,138 p=606759 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 14:45:43,171 p=606759 u=ssd n=ansible | TASK [Install NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 14:45:43,201 p=606759 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:45:56,726 p=606759 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:45:56,735 p=606759 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 14:45:56,765 p=606759 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:46:09,979 p=606759 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:46:09,987 p=606759 u=ssd n=ansible | TASK [Copy chrony config file to ubuntu server] ******************************************************************************************************
+2023-12-04 14:46:10,017 p=606759 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:46:30,826 p=606759 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:46:30,833 p=606759 u=ssd n=ansible | TASK [Restart NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 14:46:30,864 p=606759 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:46:44,142 p=606759 u=ssd n=ansible | changed: [web02]
+2023-12-04 14:46:44,150 p=606759 u=ssd n=ansible | TASK [Install NTP(Chrony) on CentOs] *****************************************************************************************************************
+2023-12-04 14:47:04,733 p=606759 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:47:04,745 p=606759 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:47:04,753 p=606759 u=ssd n=ansible | TASK [Start and enable NTP service on CentOs] ********************************************************************************************************
+2023-12-04 14:47:17,868 p=606759 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:47:17,880 p=606759 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:47:17,888 p=606759 u=ssd n=ansible | TASK [Copy chrony config file to CentOs server] ******************************************************************************************************
+2023-12-04 14:47:38,012 p=606759 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:47:38,023 p=606759 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:47:38,033 p=606759 u=ssd n=ansible | TASK [Restart NTP service on CentOs] *****************************************************************************************************************
+2023-12-04 14:47:50,406 p=606759 u=ssd n=ansible | changed: [web01]
+2023-12-04 14:47:50,417 p=606759 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:47:50,496 p=606759 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 14:47:50,496 p=606759 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 14:47:50,496 p=606759 u=ssd n=ansible | web01                      : ok=5    changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 14:47:50,496 p=606759 u=ssd n=ansible | web02                      : ok=5    changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 14:56:12,225 p=624831 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 14:56:12,236 p=624831 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 14:56:36,484 p=624831 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:56:58,054 p=624831 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:57:08,091 p=624831 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 14:57:08,132 p=624831 u=ssd n=ansible | TASK [Install NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 14:57:08,161 p=624831 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:57:22,723 p=624831 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:57:22,729 p=624831 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 14:57:22,758 p=624831 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:57:35,861 p=624831 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:57:35,873 p=624831 u=ssd n=ansible | TASK [Copy chrony config file to ubuntu server] ******************************************************************************************************
+2023-12-04 14:57:35,907 p=624831 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:57:52,856 p=624831 u=ssd n=ansible | ok: [web02]
+2023-12-04 14:57:52,862 p=624831 u=ssd n=ansible | TASK [Restart NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 14:57:52,892 p=624831 u=ssd n=ansible | skipping: [web01]
+2023-12-04 14:58:03,509 p=624831 u=ssd n=ansible | changed: [web02]
+2023-12-04 14:58:03,516 p=624831 u=ssd n=ansible | TASK [Install NTP(Chrony) on CentOs] *****************************************************************************************************************
+2023-12-04 14:58:20,515 p=624831 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:58:20,526 p=624831 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:58:20,535 p=624831 u=ssd n=ansible | TASK [Start and enable NTP service on CentOs] ********************************************************************************************************
+2023-12-04 14:58:31,986 p=624831 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:58:31,997 p=624831 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:58:32,007 p=624831 u=ssd n=ansible | TASK [Copy chrony config file to CentOs server] ******************************************************************************************************
+2023-12-04 14:58:49,802 p=624831 u=ssd n=ansible | ok: [web01]
+2023-12-04 14:58:49,816 p=624831 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:58:49,824 p=624831 u=ssd n=ansible | TASK [Restart NTP service on CentOs] *****************************************************************************************************************
+2023-12-04 14:59:01,068 p=624831 u=ssd n=ansible | changed: [web01]
+2023-12-04 14:59:01,078 p=624831 u=ssd n=ansible | skipping: [web02]
+2023-12-04 14:59:01,125 p=624831 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 14:59:01,125 p=624831 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 14:59:01,125 p=624831 u=ssd n=ansible | web01                      : ok=5    changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 14:59:01,125 p=624831 u=ssd n=ansible | web02                      : ok=5    changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 14:59:33,983 p=629996 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 14:59:33,994 p=629996 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 14:59:51,367 p=629996 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:00:15,141 p=629996 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:00:22,760 p=629996 u=ssd n=ansible |  [ERROR]: User interrupted execution
+
+2023-12-04 15:00:26,296 p=631064 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 15:00:26,308 p=631064 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 15:00:42,491 p=631064 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:00:57,717 p=631064 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:01:07,745 p=631064 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 15:01:07,774 p=631064 u=ssd n=ansible | TASK [Install NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 15:01:07,800 p=631064 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:01:21,561 p=631064 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:01:21,570 p=631064 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 15:01:21,594 p=631064 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:01:33,445 p=631064 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:01:33,453 p=631064 u=ssd n=ansible | TASK [Copy chrony config file to ubuntu server] ******************************************************************************************************
+2023-12-04 15:01:33,478 p=631064 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:01:49,416 p=631064 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:01:49,426 p=631064 u=ssd n=ansible | TASK [Restart NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 15:01:49,453 p=631064 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:02:03,144 p=631064 u=ssd n=ansible | changed: [web02]
+2023-12-04 15:02:03,153 p=631064 u=ssd n=ansible | TASK [Install NTP(Chrony) on CentOs] *****************************************************************************************************************
+2023-12-04 15:02:22,069 p=631064 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:02:22,081 p=631064 u=ssd n=ansible | skipping: [web02]
+2023-12-04 15:02:22,091 p=631064 u=ssd n=ansible | TASK [Start and enable NTP service on CentOs] ********************************************************************************************************
+2023-12-04 15:02:33,171 p=631064 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:02:33,185 p=631064 u=ssd n=ansible | skipping: [web02]
+2023-12-04 15:02:33,195 p=631064 u=ssd n=ansible | TASK [Copy chrony config file to CentOs server] ******************************************************************************************************
+2023-12-04 15:02:50,664 p=631064 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:02:50,677 p=631064 u=ssd n=ansible | skipping: [web02]
+2023-12-04 15:02:50,686 p=631064 u=ssd n=ansible | TASK [Restart NTP service on CentOs] *****************************************************************************************************************
+2023-12-04 15:03:03,255 p=631064 u=ssd n=ansible | changed: [web01]
+2023-12-04 15:03:03,265 p=631064 u=ssd n=ansible | skipping: [web02]
+2023-12-04 15:03:03,325 p=631064 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 15:03:03,325 p=631064 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 15:03:03,326 p=631064 u=ssd n=ansible | web01                      : ok=5    changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 15:03:03,326 p=631064 u=ssd n=ansible | web02                      : ok=5    changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 15:03:35,146 p=636219 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 15:03:35,157 p=636219 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 15:03:52,636 p=636219 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:04:16,214 p=636219 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:04:26,242 p=636219 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 15:04:26,270 p=636219 u=ssd n=ansible | TASK [Install NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 15:04:26,298 p=636219 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:04:40,551 p=636219 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:04:40,558 p=636219 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 15:04:40,584 p=636219 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:04:55,181 p=636219 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:04:55,188 p=636219 u=ssd n=ansible | TASK [Copy chrony config file to ubuntu server] ******************************************************************************************************
+2023-12-04 15:04:55,215 p=636219 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:05:15,455 p=636219 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:05:15,465 p=636219 u=ssd n=ansible | TASK [Restart NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 15:05:15,491 p=636219 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:05:28,648 p=636219 u=ssd n=ansible |  [ERROR]: User interrupted execution
+
+2023-12-04 15:05:35,508 p=639316 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 15:05:35,519 p=639316 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 15:05:56,648 p=639316 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:06:13,340 p=639316 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:06:23,370 p=639316 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 15:06:23,426 p=639316 u=ssd n=ansible | TASK [Install NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 15:06:23,457 p=639316 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:06:40,767 p=639316 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:06:40,775 p=639316 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 15:06:40,801 p=639316 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:06:53,561 p=639316 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:06:53,569 p=639316 u=ssd n=ansible | TASK [Copy chrony config file to ubuntu server] ******************************************************************************************************
+2023-12-04 15:06:53,596 p=639316 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:07:11,787 p=639316 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:07:11,795 p=639316 u=ssd n=ansible | TASK [Restart NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 15:07:11,821 p=639316 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:07:25,276 p=639316 u=ssd n=ansible | changed: [web02]
+2023-12-04 15:07:25,283 p=639316 u=ssd n=ansible | TASK [Install NTP(Chrony) on CentOs] *****************************************************************************************************************
+2023-12-04 15:07:25,827 p=639316 u=ssd n=ansible |  [ERROR]: User interrupted execution
+
+2023-12-04 15:09:19,469 p=645038 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 15:09:19,480 p=645038 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 15:09:41,966 p=645038 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:10:05,286 p=645038 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:10:15,318 p=645038 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 15:10:15,368 p=645038 u=ssd n=ansible | TASK [Install NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 15:10:15,400 p=645038 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:10:29,224 p=645038 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:10:29,234 p=645038 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 15:10:29,267 p=645038 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:10:40,695 p=645038 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:10:40,704 p=645038 u=ssd n=ansible | TASK [Copy chrony config file to ubuntu server] ******************************************************************************************************
+2023-12-04 15:10:40,739 p=645038 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:10:58,922 p=645038 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:10:58,934 p=645038 u=ssd n=ansible | TASK [Install NTP(Chrony) on CentOs] *****************************************************************************************************************
+2023-12-04 15:11:16,341 p=645038 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:11:16,354 p=645038 u=ssd n=ansible | skipping: [web02]
+2023-12-04 15:11:16,364 p=645038 u=ssd n=ansible | TASK [Start and enable NTP service on CentOs] ********************************************************************************************************
+2023-12-04 15:11:28,629 p=645038 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:11:28,644 p=645038 u=ssd n=ansible | skipping: [web02]
+2023-12-04 15:11:28,652 p=645038 u=ssd n=ansible | TASK [Copy chrony config file to CentOs server] ******************************************************************************************************
+2023-12-04 15:11:47,879 p=645038 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:11:47,891 p=645038 u=ssd n=ansible | skipping: [web02]
+2023-12-04 15:11:47,969 p=645038 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 15:11:47,970 p=645038 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 15:11:47,970 p=645038 u=ssd n=ansible | web01                      : ok=4    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-12-04 15:11:47,970 p=645038 u=ssd n=ansible | web02                      : ok=4    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-12-04 15:12:06,499 p=649154 u=ssd n=ansible | PLAY [Provision NTP service on ubuntu and CentOs] ****************************************************************************************************
+2023-12-04 15:12:06,512 p=649154 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 15:12:22,566 p=649154 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:12:42,783 p=649154 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:12:52,814 p=649154 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 15:12:52,869 p=649154 u=ssd n=ansible | TASK [Install NTP service on ubuntu] *****************************************************************************************************************
+2023-12-04 15:12:52,900 p=649154 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:13:06,312 p=649154 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:13:06,321 p=649154 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 15:13:06,353 p=649154 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:13:18,499 p=649154 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:13:18,507 p=649154 u=ssd n=ansible | TASK [Copy chrony config file to ubuntu server] ******************************************************************************************************
+2023-12-04 15:13:18,541 p=649154 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:13:36,420 p=649154 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:13:36,428 p=649154 u=ssd n=ansible | TASK [Install NTP(Chrony) on CentOs] *****************************************************************************************************************
+2023-12-04 15:13:55,682 p=649154 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:13:55,694 p=649154 u=ssd n=ansible | skipping: [web02]
+2023-12-04 15:13:55,704 p=649154 u=ssd n=ansible | TASK [Start and enable NTP service on CentOs] ********************************************************************************************************
+2023-12-04 15:14:07,559 p=649154 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:14:07,569 p=649154 u=ssd n=ansible | skipping: [web02]
+2023-12-04 15:14:07,582 p=649154 u=ssd n=ansible | TASK [Copy chrony config file to CentOs server] ******************************************************************************************************
+2023-12-04 15:14:31,642 p=649154 u=ssd n=ansible | changed: [web01]
+2023-12-04 15:14:31,653 p=649154 u=ssd n=ansible | skipping: [web02]
+2023-12-04 15:14:31,711 p=649154 u=ssd n=ansible | RUNNING HANDLER [Restart NTP service on CentOs] ******************************************************************************************************
+2023-12-04 15:14:43,804 p=649154 u=ssd n=ansible | changed: [web01]
+2023-12-04 15:14:43,818 p=649154 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 15:14:43,818 p=649154 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 15:14:43,818 p=649154 u=ssd n=ansible | web01                      : ok=5    changed=2    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-12-04 15:14:43,818 p=649154 u=ssd n=ansible | web02                      : ok=4    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-12-04 15:14:52,951 p=653259 u=ssd n=ansible | PLAY [Uninstall packages from Ubuntu and CentOS] *****************************************************************************************************
+2023-12-04 15:14:52,965 p=653259 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 15:15:08,266 p=653259 u=ssd n=ansible | ok: [web01]
+2023-12-04 15:15:32,580 p=653259 u=ssd n=ansible | ok: [web02]
+2023-12-04 15:15:42,611 p=653259 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.207.26.248 port 22: Connection timed out", "unreachable": true}
+2023-12-04 15:15:42,652 p=653259 u=ssd n=ansible | TASK [Uninstall packages from Ubuntu] ****************************************************************************************************************
+2023-12-04 15:15:42,683 p=653259 u=ssd n=ansible | skipping: [web01] => (item=ntp) 
+2023-12-04 15:15:42,689 p=653259 u=ssd n=ansible | skipping: [web01] => (item=wget) 
+2023-12-04 15:15:42,691 p=653259 u=ssd n=ansible | skipping: [web01] => (item=git) 
+2023-12-04 15:15:42,696 p=653259 u=ssd n=ansible | skipping: [web01] => (item=zip) 
+2023-12-04 15:15:42,697 p=653259 u=ssd n=ansible | skipping: [web01] => (item=unzip) 
+2023-12-04 15:15:42,708 p=653259 u=ssd n=ansible | skipping: [web01]
+2023-12-04 15:15:59,895 p=653259 u=ssd n=ansible | changed: [web02] => (item=ntp)
+2023-12-04 15:16:11,462 p=653259 u=ssd n=ansible | ok: [web02] => (item=wget)
+2023-12-04 15:16:24,160 p=653259 u=ssd n=ansible | ok: [web02] => (item=git)
+2023-12-04 15:16:35,425 p=653259 u=ssd n=ansible | ok: [web02] => (item=zip)
+2023-12-04 15:16:46,889 p=653259 u=ssd n=ansible | ok: [web02] => (item=unzip)
+2023-12-04 15:16:46,901 p=653259 u=ssd n=ansible | TASK [Uninstall packages from CentOS] ****************************************************************************************************************
+2023-12-04 15:17:05,150 p=653259 u=ssd n=ansible | changed: [web01] => (item=chrony)
+2023-12-04 15:17:17,818 p=653259 u=ssd n=ansible | ok: [web01] => (item=wget)
+2023-12-04 15:17:29,084 p=653259 u=ssd n=ansible | ok: [web01] => (item=git)
+2023-12-04 15:17:40,757 p=653259 u=ssd n=ansible | ok: [web01] => (item=zip)
+2023-12-04 15:17:51,404 p=653259 u=ssd n=ansible | ok: [web01] => (item=unzip)
+2023-12-04 15:17:51,434 p=653259 u=ssd n=ansible | skipping: [web02] => (item=chrony) 
+2023-12-04 15:17:51,439 p=653259 u=ssd n=ansible | skipping: [web02] => (item=wget) 
+2023-12-04 15:17:51,446 p=653259 u=ssd n=ansible | skipping: [web02] => (item=git) 
+2023-12-04 15:17:51,449 p=653259 u=ssd n=ansible | skipping: [web02] => (item=zip) 
+2023-12-04 15:17:51,451 p=653259 u=ssd n=ansible | skipping: [web02] => (item=unzip) 
+2023-12-04 15:17:51,452 p=653259 u=ssd n=ansible | skipping: [web02]
+2023-12-04 15:17:51,532 p=653259 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 15:17:51,532 p=653259 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 15:17:51,532 p=653259 u=ssd n=ansible | web01                      : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-04 15:17:51,532 p=653259 u=ssd n=ansible | web02                      : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
