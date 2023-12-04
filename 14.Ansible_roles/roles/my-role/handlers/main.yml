@@ -1,5 +1,6 @@
 ---
 # handlers file for my-role
+
 - name: Restart NTP service on ubuntu 
   ansible.builtin.service:
         name: ntp
