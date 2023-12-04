@@ -1,10 +1,20 @@
 ---
 
-- name: Uninstall the mariadb server on dbserver
-  hosts: dbserver
+- name: Uninstall the NTP server
+  hosts: all
   become: yes
   tasks:
-    - name: Uninstall the mariadb server on dbserver
-      ansible.builtin.yum:
-        name: mariadb-server
+    - name: Uninstall NTP service on ubuntu
+      ansible.builtin.apt:
+        name: ntp
         state: absent
+      when: ansible_distribution == "Ubuntu"
+  
+
+    - name: Uninstall NTP(Chrony) on CentOs
+      ansible.builtin.yum:
+        name: chrony
+        state: absent
+      when: ansible_distribution == "CentOs"
+
+     

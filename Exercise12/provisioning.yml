@@ -1,0 +1,45 @@
+---
+- name: Install packages using loop on Ubuntu and CentOs
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install packages on Ubuntu
+      ansible.builtin.apt:
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+      loop:
+        - ntp
+        - wget
+        - git
+        - zip
+        - unzip
+    
+    - name: Start and enable NTP service on ubuntu 
+      ansible.builtin.service:
+        name: ntp
+        state: started
+        enabled: yes
+      when: ansible_distribution == "Ubuntu"
+
+
+    - name: Install packages on CentOs
+      ansible.builtin.yum:
+        name: "{{ item }}"
+        state: present
+      when: ansible_distribution == "CentOs"
+      loop:
+        - chrony
+        - wget
+        - git
+        - zip
+        - unzip
+    
+
+    - name: Start and enable NTP service on CentOs
+      ansible.builtin.service:
+        name: chronyd
+        state: started
+        enabled: yes
+      when: ansible_distribution == "CentOs"

@@ -1,0 +1,809 @@
+2023-12-04 12:11:07,829 p=402395 u=ssd n=ansible | PLAY [Uninstall the NTP server] **********************************************************************************************************************
+2023-12-04 12:11:07,864 p=402395 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 12:11:15,831 p=402395 u=ssd n=ansible | fatal: [web01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '34.230.23.241' (ED25519) to the list of known hosts.\r\nec2-user@34.230.23.241: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).", "unreachable": true}
+2023-12-04 12:11:20,549 p=402395 u=ssd n=ansible | fatal: [web02]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '54.224.112.182' (ED25519) to the list of known hosts.\r\nubuntu@54.224.112.182: Permission denied (publickey).", "unreachable": true}
+2023-12-04 12:11:26,900 p=402395 u=ssd n=ansible | fatal: [db]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '52.207.26.248' (ED25519) to the list of known hosts.\r\nec2-user@52.207.26.248: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).", "unreachable": true}
+2023-12-04 12:11:26,901 p=402395 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 12:11:26,901 p=402395 u=ssd n=ansible | db                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 12:11:26,901 p=402395 u=ssd n=ansible | web01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 12:11:26,901 p=402395 u=ssd n=ansible | web02                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-12-04 12:13:57,399 p=407052 u=ssd n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/ssd/Desktop/Ansible_Project/Exercise12/uninstall.yml': line 8, column 13, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - name: Uninstall packages from Ubuntu
+        name: "{{ item }}"
+            ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2023-12-04 12:17:14,266 p=412234 u=ssd n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/ssd/Desktop/Ansible_Project/Exercise12/uninstall.yml': line 8, column 28, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - name: Uninstall packages from Ubuntu
+        ansible.builtin.apt:
+                           ^ here
+
+2023-12-04 12:17:40,355 p=412736 u=ssd n=ansible | PLAY [Uninstall packages from Ubuntu and CentOs] *****************************************************************************************************
+2023-12-04 12:17:40,367 p=412736 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 12:18:02,490 p=412736 u=ssd n=ansible | ok: [web01]
+2023-12-04 12:18:24,683 p=412736 u=ssd n=ansible | ok: [web02]
+2023-12-04 12:18:48,717 p=412736 u=ssd n=ansible | ok: [db]
+2023-12-04 12:18:48,759 p=412736 u=ssd n=ansible | TASK [Uninstall packages from Ubuntu] ****************************************************************************************************************
+2023-12-04 12:18:48,787 p=412736 u=ssd n=ansible | skipping: [web01] => (item=ntp) 
+2023-12-04 12:18:48,793 p=412736 u=ssd n=ansible | skipping: [web01] => (item=wget) 
+2023-12-04 12:18:48,797 p=412736 u=ssd n=ansible | skipping: [web01] => (item=git) 
+2023-12-04 12:18:48,802 p=412736 u=ssd n=ansible | skipping: [web01] => (item=zip) 
+2023-12-04 12:18:48,803 p=412736 u=ssd n=ansible | skipping: [web01] => (item=unzip) 
+2023-12-04 12:18:48,811 p=412736 u=ssd n=ansible | skipping: [web01]
+2023-12-04 12:19:07,008 p=412736 u=ssd n=ansible | changed: [web02] => (item=ntp)
+2023-12-04 12:19:22,581 p=412736 u=ssd n=ansible | changed: [web02] => (item=wget)
+2023-12-04 12:19:37,062 p=412736 u=ssd n=ansible | changed: [web02] => (item=git)
+2023-12-04 12:19:49,602 p=412736 u=ssd n=ansible | ok: [web02] => (item=zip)
+2023-12-04 12:20:01,883 p=412736 u=ssd n=ansible | ok: [web02] => (item=unzip)
+2023-12-04 12:20:01,911 p=412736 u=ssd n=ansible | skipping: [db] => (item=ntp) 
+2023-12-04 12:20:01,916 p=412736 u=ssd n=ansible | skipping: [db] => (item=wget) 
+2023-12-04 12:20:01,921 p=412736 u=ssd n=ansible | skipping: [db] => (item=git) 
+2023-12-04 12:20:01,922 p=412736 u=ssd n=ansible | skipping: [db] => (item=zip) 
+2023-12-04 12:20:01,924 p=412736 u=ssd n=ansible | skipping: [db] => (item=unzip) 
+2023-12-04 12:20:01,924 p=412736 u=ssd n=ansible | skipping: [db]
+2023-12-04 12:20:01,932 p=412736 u=ssd n=ansible | TASK [Uninstall packages from CentOs] ****************************************************************************************************************
+2023-12-04 12:20:01,959 p=412736 u=ssd n=ansible | skipping: [web01] => (item=ntp) 
+2023-12-04 12:20:01,965 p=412736 u=ssd n=ansible | skipping: [web01] => (item=wget) 
+2023-12-04 12:20:01,966 p=412736 u=ssd n=ansible | skipping: [web01] => (item=git) 
+2023-12-04 12:20:01,972 p=412736 u=ssd n=ansible | skipping: [web01] => (item=zip) 
+2023-12-04 12:20:01,973 p=412736 u=ssd n=ansible | skipping: [web01] => (item=unzip) 
+2023-12-04 12:20:01,980 p=412736 u=ssd n=ansible | skipping: [web01]
+2023-12-04 12:20:01,999 p=412736 u=ssd n=ansible | skipping: [web02] => (item=ntp) 
+2023-12-04 12:20:02,006 p=412736 u=ssd n=ansible | skipping: [web02] => (item=wget) 
+2023-12-04 12:20:02,007 p=412736 u=ssd n=ansible | skipping: [web02] => (item=git) 
+2023-12-04 12:20:02,014 p=412736 u=ssd n=ansible | skipping: [web02] => (item=zip) 
+2023-12-04 12:20:02,015 p=412736 u=ssd n=ansible | skipping: [web02] => (item=unzip) 
+2023-12-04 12:20:02,024 p=412736 u=ssd n=ansible | skipping: [web02]
+2023-12-04 12:20:02,044 p=412736 u=ssd n=ansible | skipping: [db] => (item=ntp) 
+2023-12-04 12:20:02,050 p=412736 u=ssd n=ansible | skipping: [db] => (item=wget) 
+2023-12-04 12:20:02,055 p=412736 u=ssd n=ansible | skipping: [db] => (item=git) 
+2023-12-04 12:20:02,056 p=412736 u=ssd n=ansible | skipping: [db] => (item=zip) 
+2023-12-04 12:20:02,057 p=412736 u=ssd n=ansible | skipping: [db] => (item=unzip) 
+2023-12-04 12:20:02,058 p=412736 u=ssd n=ansible | skipping: [db]
+2023-12-04 12:20:02,161 p=412736 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 12:20:02,161 p=412736 u=ssd n=ansible | db                         : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-12-04 12:20:02,161 p=412736 u=ssd n=ansible | web01                      : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-12-04 12:20:02,161 p=412736 u=ssd n=ansible | web02                      : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-04 12:20:37,090 p=417253 u=ssd n=ansible | PLAY [Install packages using loop on Ubuntu and CentOs] **********************************************************************************************
+2023-12-04 12:20:37,104 p=417253 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 12:21:01,921 p=417253 u=ssd n=ansible | ok: [web01]
+2023-12-04 12:21:24,154 p=417253 u=ssd n=ansible | ok: [web02]
+2023-12-04 12:21:46,064 p=417253 u=ssd n=ansible | ok: [db]
+2023-12-04 12:21:46,105 p=417253 u=ssd n=ansible | TASK [Install packages on Ubuntu] ********************************************************************************************************************
+2023-12-04 12:21:46,131 p=417253 u=ssd n=ansible | skipping: [web01] => (item=ntp) 
+2023-12-04 12:21:46,135 p=417253 u=ssd n=ansible | skipping: [web01] => (item=wget) 
+2023-12-04 12:21:46,140 p=417253 u=ssd n=ansible | skipping: [web01] => (item=git) 
+2023-12-04 12:21:46,141 p=417253 u=ssd n=ansible | skipping: [web01] => (item=zip) 
+2023-12-04 12:21:46,145 p=417253 u=ssd n=ansible | skipping: [web01] => (item=unzip) 
+2023-12-04 12:21:46,154 p=417253 u=ssd n=ansible | skipping: [web01]
+2023-12-04 12:22:09,715 p=417253 u=ssd n=ansible | changed: [web02] => (item=ntp)
+2023-12-04 12:22:27,944 p=417253 u=ssd n=ansible | changed: [web02] => (item=wget)
+2023-12-04 12:22:45,352 p=417253 u=ssd n=ansible | changed: [web02] => (item=git)
+2023-12-04 12:23:03,890 p=417253 u=ssd n=ansible | changed: [web02] => (item=zip)
+2023-12-04 12:23:17,609 p=417253 u=ssd n=ansible | ok: [web02] => (item=unzip)
+2023-12-04 12:23:17,637 p=417253 u=ssd n=ansible | skipping: [db] => (item=ntp) 
+2023-12-04 12:23:17,641 p=417253 u=ssd n=ansible | skipping: [db] => (item=wget) 
+2023-12-04 12:23:17,647 p=417253 u=ssd n=ansible | skipping: [db] => (item=git) 
+2023-12-04 12:23:17,648 p=417253 u=ssd n=ansible | skipping: [db] => (item=zip) 
+2023-12-04 12:23:17,649 p=417253 u=ssd n=ansible | skipping: [db] => (item=unzip) 
+2023-12-04 12:23:17,650 p=417253 u=ssd n=ansible | skipping: [db]
+2023-12-04 12:23:17,659 p=417253 u=ssd n=ansible | TASK [Start and enable NTP service on ubuntu] ********************************************************************************************************
+2023-12-04 12:23:17,689 p=417253 u=ssd n=ansible | skipping: [web01]
+2023-12-04 12:23:32,266 p=417253 u=ssd n=ansible | ok: [web02]
+2023-12-04 12:23:32,276 p=417253 u=ssd n=ansible | skipping: [db]
+2023-12-04 12:23:32,285 p=417253 u=ssd n=ansible | TASK [Install packages on CentOs] ********************************************************************************************************************
+2023-12-04 12:23:32,315 p=417253 u=ssd n=ansible | skipping: [web01] => (item=chrony) 
+2023-12-04 12:23:32,320 p=417253 u=ssd n=ansible | skipping: [web01] => (item=wget) 
+2023-12-04 12:23:32,327 p=417253 u=ssd n=ansible | skipping: [web01] => (item=git) 
+2023-12-04 12:23:32,329 p=417253 u=ssd n=ansible | skipping: [web01] => (item=zip) 
+2023-12-04 12:23:32,330 p=417253 u=ssd n=ansible | skipping: [web01] => (item=unzip) 
+2023-12-04 12:23:32,337 p=417253 u=ssd n=ansible | skipping: [web01]
+2023-12-04 12:23:32,352 p=417253 u=ssd n=ansible | skipping: [web02] => (item=chrony) 
+2023-12-04 12:23:32,361 p=417253 u=ssd n=ansible | skipping: [web02] => (item=wget) 
+2023-12-04 12:23:32,362 p=417253 u=ssd n=ansible | skipping: [web02] => (item=git) 
+2023-12-04 12:23:32,367 p=417253 u=ssd n=ansible | skipping: [web02] => (item=zip) 
+2023-12-04 12:23:32,367 p=417253 u=ssd n=ansible | skipping: [web02] => (item=unzip) 
+2023-12-04 12:23:32,377 p=417253 u=ssd n=ansible | skipping: [web02]
+2023-12-04 12:23:32,395 p=417253 u=ssd n=ansible | skipping: [db] => (item=chrony) 
+2023-12-04 12:23:32,400 p=417253 u=ssd n=ansible | skipping: [db] => (item=wget) 
+2023-12-04 12:23:32,401 p=417253 u=ssd n=ansible | skipping: [db] => (item=git) 
+2023-12-04 12:23:32,408 p=417253 u=ssd n=ansible | skipping: [db] => (item=zip) 
+2023-12-04 12:23:32,409 p=417253 u=ssd n=ansible | skipping: [db] => (item=unzip) 
+2023-12-04 12:23:32,410 p=417253 u=ssd n=ansible | skipping: [db]
+2023-12-04 12:23:32,421 p=417253 u=ssd n=ansible | TASK [Start and enable NTP service on CentOs] ********************************************************************************************************
+2023-12-04 12:23:32,467 p=417253 u=ssd n=ansible | skipping: [web01]
+2023-12-04 12:23:32,468 p=417253 u=ssd n=ansible | skipping: [web02]
+2023-12-04 12:23:32,478 p=417253 u=ssd n=ansible | skipping: [db]
+2023-12-04 12:23:32,544 p=417253 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 12:23:32,545 p=417253 u=ssd n=ansible | db                         : ok=1    changed=0    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 12:23:32,545 p=417253 u=ssd n=ansible | web01                      : ok=1    changed=0    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2023-12-04 12:23:32,545 p=417253 u=ssd n=ansible | web02                      : ok=3    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-12-04 12:24:30,525 p=423394 u=ssd n=ansible | PLAY [Uninstall packages from Ubuntu and CentOs] *****************************************************************************************************
+2023-12-04 12:24:30,536 p=423394 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 12:24:58,738 p=423394 u=ssd n=ansible | ok: [web01]
+2023-12-04 12:25:21,450 p=423394 u=ssd n=ansible | ok: [web02]
+2023-12-04 12:25:46,622 p=423394 u=ssd n=ansible | ok: [db]
+2023-12-04 12:25:46,664 p=423394 u=ssd n=ansible | TASK [Uninstall packages from Ubuntu] ****************************************************************************************************************
+2023-12-04 12:25:46,690 p=423394 u=ssd n=ansible | skipping: [web01] => (item=ntp) 
+2023-12-04 12:25:46,696 p=423394 u=ssd n=ansible | skipping: [web01] => (item=wget) 
+2023-12-04 12:25:46,702 p=423394 u=ssd n=ansible | skipping: [web01] => (item=git) 
+2023-12-04 12:25:46,703 p=423394 u=ssd n=ansible | skipping: [web01] => (item=zip) 
+2023-12-04 12:25:46,705 p=423394 u=ssd n=ansible | skipping: [web01] => (item=unzip) 
+2023-12-04 12:25:46,713 p=423394 u=ssd n=ansible | skipping: [web01]
+2023-12-04 12:26:04,948 p=423394 u=ssd n=ansible | changed: [web02] => (item=ntp)
+2023-12-04 12:26:22,356 p=423394 u=ssd n=ansible | changed: [web02] => (item=wget)
+2023-12-04 12:26:37,511 p=423394 u=ssd n=ansible | changed: [web02] => (item=git)
+2023-12-04 12:26:53,588 p=423394 u=ssd n=ansible | changed: [web02] => (item=zip)
+2023-12-04 12:27:08,535 p=423394 u=ssd n=ansible | changed: [web02] => (item=unzip)
+2023-12-04 12:27:08,560 p=423394 u=ssd n=ansible | skipping: [db] => (item=ntp) 
+2023-12-04 12:27:08,565 p=423394 u=ssd n=ansible | skipping: [db] => (item=wget) 
+2023-12-04 12:27:08,571 p=423394 u=ssd n=ansible | skipping: [db] => (item=git) 
+2023-12-04 12:27:08,576 p=423394 u=ssd n=ansible | skipping: [db] => (item=zip) 
+2023-12-04 12:27:08,576 p=423394 u=ssd n=ansible | skipping: [db] => (item=unzip) 
+2023-12-04 12:27:08,577 p=423394 u=ssd n=ansible | skipping: [db]
+2023-12-04 12:27:08,584 p=423394 u=ssd n=ansible | TASK [Uninstall packages from CentOs] ****************************************************************************************************************
+2023-12-04 12:27:08,614 p=423394 u=ssd n=ansible | skipping: [web01] => (item=ntp) 
+2023-12-04 12:27:08,619 p=423394 u=ssd n=ansible | skipping: [web01] => (item=wget) 
+2023-12-04 12:27:08,625 p=423394 u=ssd n=ansible | skipping: [web01] => (item=git) 
+2023-12-04 12:27:08,625 p=423394 u=ssd n=ansible | skipping: [web01] => (item=zip) 
+2023-12-04 12:27:08,626 p=423394 u=ssd n=ansible | skipping: [web01] => (item=unzip) 
+2023-12-04 12:27:08,636 p=423394 u=ssd n=ansible | skipping: [web01]
+2023-12-04 12:27:08,651 p=423394 u=ssd n=ansible | skipping: [web02] => (item=ntp) 
+2023-12-04 12:27:08,656 p=423394 u=ssd n=ansible | skipping: [web02] => (item=wget) 
+2023-12-04 12:27:08,661 p=423394 u=ssd n=ansible | skipping: [web02] => (item=git) 
+2023-12-04 12:27:08,664 p=423394 u=ssd n=ansible | skipping: [web02] => (item=zip) 
+2023-12-04 12:27:08,665 p=423394 u=ssd n=ansible | skipping: [web02] => (item=unzip) 
+2023-12-04 12:27:08,674 p=423394 u=ssd n=ansible | skipping: [web02]
+2023-12-04 12:27:08,691 p=423394 u=ssd n=ansible | skipping: [db] => (item=ntp) 
+2023-12-04 12:27:08,697 p=423394 u=ssd n=ansible | skipping: [db] => (item=wget) 
+2023-12-04 12:27:08,702 p=423394 u=ssd n=ansible | skipping: [db] => (item=git) 
+2023-12-04 12:27:08,703 p=423394 u=ssd n=ansible | skipping: [db] => (item=zip) 
+2023-12-04 12:27:08,704 p=423394 u=ssd n=ansible | skipping: [db] => (item=unzip) 
+2023-12-04 12:27:08,705 p=423394 u=ssd n=ansible | skipping: [db]
+2023-12-04 12:27:08,774 p=423394 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 12:27:08,774 p=423394 u=ssd n=ansible | db                         : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-12-04 12:27:08,774 p=423394 u=ssd n=ansible | web01                      : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-12-04 12:27:08,775 p=423394 u=ssd n=ansible | web02                      : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-04 12:29:27,875 p=430284 u=ssd n=ansible | db | SUCCESS => {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "172.31.35.255"
+        ],
+        "ansible_all_ipv6_addresses": [
+            "fe80::c46:f4ff:febe:d0a9"
+        ],
+        "ansible_apparmor": {
+            "status": "disabled"
+        },
+        "ansible_architecture": "x86_64",
+        "ansible_bios_date": "08/24/2006",
+        "ansible_bios_vendor": "Xen",
+        "ansible_bios_version": "4.11.amazon",
+        "ansible_board_asset_tag": "NA",
+        "ansible_board_name": "NA",
+        "ansible_board_serial": "NA",
+        "ansible_board_vendor": "NA",
+        "ansible_board_version": "NA",
+        "ansible_chassis_asset_tag": "NA",
+        "ansible_chassis_serial": "NA",
+        "ansible_chassis_vendor": "Xen",
+        "ansible_chassis_version": "NA",
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "(hd0,gpt2)/boot/vmlinuz-5.14.0-229.el9.x86_64",
+            "console": "tty0",
+            "crashkernel": "1G-4G:192M,4G-64G:256M,64G-:512M",
+            "net.ifnames": "0",
+            "nvme_core.io_timeout": "4294967295",
+            "rd.blacklist": "nouveau",
+            "ro": true,
+            "root": "UUID=d5ae404e-d570-441c-bd68-fb544b5ebbb9"
+        },
+        "ansible_date_time": {
+            "date": "2023-12-04",
+            "day": "04",
+            "epoch": "1701673166",
+            "epoch_int": "1701673166",
+            "hour": "06",
+            "iso8601": "2023-12-04T06:59:26Z",
+            "iso8601_basic": "20231204T065926510007",
+            "iso8601_basic_short": "20231204T065926",
+            "iso8601_micro": "2023-12-04T06:59:26.510007Z",
+            "minute": "59",
+            "month": "12",
+            "second": "26",
+            "time": "06:59:26",
+            "tz": "UTC",
+            "tz_dst": "UTC",
+            "tz_offset": "+0000",
+            "weekday": "Monday",
+            "weekday_number": "1",
+            "weeknumber": "49",
+            "year": "2023"
+        },
+        "ansible_default_ipv4": {
+            "address": "172.31.35.255",
+            "alias": "eth0",
+            "broadcast": "172.31.47.255",
+            "gateway": "172.31.32.1",
+            "interface": "eth0",
+            "macaddress": "0e:46:f4:be:d0:a9",
+            "mtu": 9001,
+            "netmask": "255.255.240.0",
+            "network": "172.31.32.0",
+            "prefix": "20",
+            "type": "ether"
+        },
+        "ansible_default_ipv6": {},
+        "ansible_device_links": {
+            "ids": {},
+            "labels": {},
+            "masters": {},
+            "uuids": {
+                "xvda2": [
+                    "d5ae404e-d570-441c-bd68-fb544b5ebbb9"
+                ]
+            }
+        },
+        "ansible_devices": {
+            "xvda": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {
+                    "xvda1": {
+                        "holders": [],
+                        "links": {
+                            "ids": [],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": []
+                        },
+                        "sectors": "2048",
+                        "sectorsize": 512,
+                        "size": "1.00 MB",
+                        "start": "2048",
+                        "uuid": null
+                    },
+                    "xvda2": {
+                        "holders": [],
+                        "links": {
+                            "ids": [],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": [
+                                "d5ae404e-d570-441c-bd68-fb544b5ebbb9"
+                            ]
+                        },
+                        "sectors": "20967391",
+                        "sectorsize": 512,
+                        "size": "10.00 GB",
+                        "start": "4096",
+                        "uuid": "d5ae404e-d570-441c-bd68-fb544b5ebbb9"
+                    }
+                },
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "20971520",
+                "sectorsize": "512",
+                "size": "10.00 GB",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            }
+        },
+        "ansible_distribution": "CentOS",
+        "ansible_distribution_file_parsed": true,
+        "ansible_distribution_file_path": "/etc/centos-release",
+        "ansible_distribution_file_variety": "CentOS",
+        "ansible_distribution_major_version": "9",
+        "ansible_distribution_release": "Stream",
+        "ansible_distribution_version": "9",
+        "ansible_dns": {
+            "nameservers": [
+                "172.31.0.2"
+            ],
+            "search": [
+                "ec2.internal"
+            ]
+        },
+        "ansible_domain": "ec2.internal",
+        "ansible_effective_group_id": 0,
+        "ansible_effective_user_id": 0,
+        "ansible_env": {
+            "HOME": "/root",
+            "LANG": "en_US.UTF-8",
+            "LOGNAME": "root",
+            "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.m4a=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.oga=01;36:*.opus=01;36:*.spx=01;36:*.xspf=01;36:",
+            "MAIL": "/var/mail/root",
+            "PATH": "/sbin:/bin:/usr/sbin:/usr/bin",
+            "PWD": "/home/ec2-user",
+            "SHELL": "/bin/bash",
+            "SHLVL": "0",
+            "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-mvrivcgxygyfmifoglzjdslaqpaikmbi ; /usr/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1701673150.241257-430288-32282927259662/AnsiballZ_setup.py",
+            "SUDO_GID": "1000",
+            "SUDO_UID": "1000",
+            "SUDO_USER": "ec2-user",
+            "TERM": "xterm-256color",
+            "USER": "root",
+            "_": "/usr/bin/python3"
+        },
+        "ansible_eth0": {
+            "active": true,
+            "device": "eth0",
+            "features": {
+                "esp_hw_offload": "off [fixed]",
+                "esp_tx_csum_hw_offload": "off [fixed]",
+                "fcoe_mtu": "off [fixed]",
+                "generic_receive_offload": "on",
+                "generic_segmentation_offload": "on",
+                "highdma": "off [fixed]",
+                "hsr_dup_offload": "off [fixed]",
+                "hsr_fwd_offload": "off [fixed]",
+                "hsr_tag_ins_offload": "off [fixed]",
+                "hsr_tag_rm_offload": "off [fixed]",
+                "hw_tc_offload": "off [fixed]",
+                "l2_fwd_offload": "off [fixed]",
+                "large_receive_offload": "off [fixed]",
+                "loopback": "off [fixed]",
+                "macsec_hw_offload": "off [fixed]",
+                "netns_local": "off [fixed]",
+                "ntuple_filters": "off [fixed]",
+                "receive_hashing": "off [fixed]",
+                "rx_all": "off [fixed]",
+                "rx_checksumming": "on [fixed]",
+                "rx_fcs": "off [fixed]",
+                "rx_gro_hw": "off [fixed]",
+                "rx_gro_list": "off",
+                "rx_udp_gro_forwarding": "off",
+                "rx_udp_tunnel_port_offload": "off [fixed]",
+                "rx_vlan_filter": "off [fixed]",
+                "rx_vlan_offload": "off [fixed]",
+                "rx_vlan_stag_filter": "off [fixed]",
+                "rx_vlan_stag_hw_parse": "off [fixed]",
+                "scatter_gather": "on",
+                "tcp_segmentation_offload": "on",
+                "tls_hw_record": "off [fixed]",
+                "tls_hw_rx_offload": "off [fixed]",
+                "tls_hw_tx_offload": "off [fixed]",
+                "tx_checksum_fcoe_crc": "off [fixed]",
+                "tx_checksum_ip_generic": "off [fixed]",
+                "tx_checksum_ipv4": "on [fixed]",
+                "tx_checksum_ipv6": "on",
+                "tx_checksum_sctp": "off [fixed]",
+                "tx_checksumming": "on",
+                "tx_esp_segmentation": "off [fixed]",
+                "tx_fcoe_segmentation": "off [fixed]",
+                "tx_gre_csum_segmentation": "off [fixed]",
+                "tx_gre_segmentation": "off [fixed]",
+                "tx_gso_list": "off [fixed]",
+                "tx_gso_partial": "off [fixed]",
+                "tx_gso_robust": "on [fixed]",
+                "tx_ipxip4_segmentation": "off [fixed]",
+                "tx_ipxip6_segmentation": "off [fixed]",
+                "tx_lockless": "off [fixed]",
+                "tx_nocache_copy": "off",
+                "tx_scatter_gather": "on",
+                "tx_scatter_gather_fraglist": "off [fixed]",
+                "tx_sctp_segmentation": "off [fixed]",
+                "tx_tcp6_segmentation": "on",
+                "tx_tcp_ecn_segmentation": "off [fixed]",
+                "tx_tcp_mangleid_segmentation": "off",
+                "tx_tcp_segmentation": "on",
+                "tx_tunnel_remcsum_segmentation": "off [fixed]",
+                "tx_udp_segmentation": "off [fixed]",
+                "tx_udp_tnl_csum_segmentation": "off [fixed]",
+                "tx_udp_tnl_segmentation": "off [fixed]",
+                "tx_vlan_offload": "off [fixed]",
+                "tx_vlan_stag_hw_insert": "off [fixed]",
+                "vlan_challenged": "off [fixed]"
+            },
+            "hw_timestamp_filters": [],
+            "ipv4": {
+                "address": "172.31.35.255",
+                "broadcast": "172.31.47.255",
+                "netmask": "255.255.240.0",
+                "network": "172.31.32.0",
+                "prefix": "20"
+            },
+            "ipv6": [
+                {
+                    "address": "fe80::c46:f4ff:febe:d0a9",
+                    "prefix": "64",
+                    "scope": "link"
+                }
+            ],
+            "macaddress": "0e:46:f4:be:d0:a9",
+            "module": "xen_netfront",
+            "mtu": 9001,
+            "pciid": "vif-0",
+            "promisc": false,
+            "timestamping": [],
+            "type": "ether"
+        },
+        "ansible_fibre_channel_wwn": [],
+        "ansible_fips": false,
+        "ansible_form_factor": "Other",
+        "ansible_fqdn": "ip-172-31-35-255.ec2.internal",
+        "ansible_hostname": "ip-172-31-35-255",
+        "ansible_hostnqn": "",
+        "ansible_interfaces": [
+            "lo",
+            "eth0"
+        ],
+        "ansible_is_chroot": false,
+        "ansible_iscsi_iqn": "",
+        "ansible_kernel": "5.14.0-229.el9.x86_64",
+        "ansible_kernel_version": "#1 SMP PREEMPT_DYNAMIC Thu Jan 5 15:30:18 UTC 2023",
+        "ansible_lo": {
+            "active": true,
+            "device": "lo",
+            "features": {
+                "esp_hw_offload": "off [fixed]",
+                "esp_tx_csum_hw_offload": "off [fixed]",
+                "fcoe_mtu": "off [fixed]",
+                "generic_receive_offload": "on",
+                "generic_segmentation_offload": "on",
+                "highdma": "on [fixed]",
+                "hsr_dup_offload": "off [fixed]",
+                "hsr_fwd_offload": "off [fixed]",
+                "hsr_tag_ins_offload": "off [fixed]",
+                "hsr_tag_rm_offload": "off [fixed]",
+                "hw_tc_offload": "off [fixed]",
+                "l2_fwd_offload": "off [fixed]",
+                "large_receive_offload": "off [fixed]",
+                "loopback": "on [fixed]",
+                "macsec_hw_offload": "off [fixed]",
+                "netns_local": "on [fixed]",
+                "ntuple_filters": "off [fixed]",
+                "receive_hashing": "off [fixed]",
+                "rx_all": "off [fixed]",
+                "rx_checksumming": "on [fixed]",
+                "rx_fcs": "off [fixed]",
+                "rx_gro_hw": "off [fixed]",
+                "rx_gro_list": "off",
+                "rx_udp_gro_forwarding": "off",
+                "rx_udp_tunnel_port_offload": "off [fixed]",
+                "rx_vlan_filter": "off [fixed]",
+                "rx_vlan_offload": "off [fixed]",
+                "rx_vlan_stag_filter": "off [fixed]",
+                "rx_vlan_stag_hw_parse": "off [fixed]",
+                "scatter_gather": "on",
+                "tcp_segmentation_offload": "on",
+                "tls_hw_record": "off [fixed]",
+                "tls_hw_rx_offload": "off [fixed]",
+                "tls_hw_tx_offload": "off [fixed]",
+                "tx_checksum_fcoe_crc": "off [fixed]",
+                "tx_checksum_ip_generic": "on [fixed]",
+                "tx_checksum_ipv4": "off [fixed]",
+                "tx_checksum_ipv6": "off [fixed]",
+                "tx_checksum_sctp": "on [fixed]",
+                "tx_checksumming": "on",
+                "tx_esp_segmentation": "off [fixed]",
+                "tx_fcoe_segmentation": "off [fixed]",
+                "tx_gre_csum_segmentation": "off [fixed]",
+                "tx_gre_segmentation": "off [fixed]",
+                "tx_gso_list": "on",
+                "tx_gso_partial": "off [fixed]",
+                "tx_gso_robust": "off [fixed]",
+                "tx_ipxip4_segmentation": "off [fixed]",
+                "tx_ipxip6_segmentation": "off [fixed]",
+                "tx_lockless": "on [fixed]",
+                "tx_nocache_copy": "off [fixed]",
+                "tx_scatter_gather": "on [fixed]",
+                "tx_scatter_gather_fraglist": "on [fixed]",
+                "tx_sctp_segmentation": "on",
+                "tx_tcp6_segmentation": "on",
+                "tx_tcp_ecn_segmentation": "on",
+                "tx_tcp_mangleid_segmentation": "on",
+                "tx_tcp_segmentation": "on",
+                "tx_tunnel_remcsum_segmentation": "off [fixed]",
+                "tx_udp_segmentation": "on",
+                "tx_udp_tnl_csum_segmentation": "off [fixed]",
+                "tx_udp_tnl_segmentation": "off [fixed]",
+                "tx_vlan_offload": "off [fixed]",
+                "tx_vlan_stag_hw_insert": "off [fixed]",
+                "vlan_challenged": "on [fixed]"
+            },
+            "hw_timestamp_filters": [],
+            "ipv4": {
+                "address": "127.0.0.1",
+                "broadcast": "",
+                "netmask": "255.0.0.0",
+                "network": "127.0.0.0",
+                "prefix": "8"
+            },
+            "ipv6": [
+                {
+                    "address": "::1",
+                    "prefix": "128",
+                    "scope": "host"
+                }
+            ],
+            "mtu": 65536,
+            "promisc": false,
+            "timestamping": [],
+            "type": "loopback"
+        },
+        "ansible_loadavg": {
+            "15m": 0.0,
+            "1m": 0.0,
+            "5m": 0.0
+        },
+        "ansible_local": {},
+        "ansible_locally_reachable_ips": {
+            "ipv4": [
+                "127.0.0.0/8",
+                "127.0.0.1",
+                "172.31.35.255"
+            ],
+            "ipv6": [
+                "::1",
+                "fe80::c46:f4ff:febe:d0a9"
+            ]
+        },
+        "ansible_lsb": {},
+        "ansible_lvm": "N/A",
+        "ansible_machine": "x86_64",
+        "ansible_machine_id": "db2452fd97f651094dac231b367064ae",
+        "ansible_memfree_mb": 497,
+        "ansible_memory_mb": {
+            "nocache": {
+                "free": 627,
+                "used": 141
+            },
+            "real": {
+                "free": 497,
+                "total": 768,
+                "used": 271
+            },
+            "swap": {
+                "cached": 0,
+                "free": 0,
+                "total": 0,
+                "used": 0
+            }
+        },
+        "ansible_memtotal_mb": 768,
+        "ansible_mounts": [
+            {
+                "block_available": 2234078,
+                "block_size": 4096,
+                "block_total": 2618363,
+                "block_used": 384285,
+                "device": "/dev/xvda2",
+                "fstype": "xfs",
+                "inode_available": 5207698,
+                "inode_total": 5241792,
+                "inode_used": 34094,
+                "mount": "/",
+                "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota",
+                "size_available": 9150783488,
+                "size_total": 10724814848,
+                "uuid": "d5ae404e-d570-441c-bd68-fb544b5ebbb9"
+            }
+        ],
+        "ansible_nodename": "ip-172-31-35-255.ec2.internal",
+        "ansible_os_family": "RedHat",
+        "ansible_pkg_mgr": "dnf",
+        "ansible_proc_cmdline": {
+            "BOOT_IMAGE": "(hd0,gpt2)/boot/vmlinuz-5.14.0-229.el9.x86_64",
+            "console": [
+                "ttyS0,115200n8",
+                "tty0"
+            ],
+            "crashkernel": "1G-4G:192M,4G-64G:256M,64G-:512M",
+            "net.ifnames": "0",
+            "nvme_core.io_timeout": "4294967295",
+            "rd.blacklist": "nouveau",
+            "ro": true,
+            "root": "UUID=d5ae404e-d570-441c-bd68-fb544b5ebbb9"
+        },
+        "ansible_processor": [
+            "0",
+            "GenuineIntel",
+            "Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"
+        ],
+        "ansible_processor_cores": 1,
+        "ansible_processor_count": 1,
+        "ansible_processor_nproc": 1,
+        "ansible_processor_threads_per_core": 1,
+        "ansible_processor_vcpus": 1,
+        "ansible_product_name": "HVM domU",
+        "ansible_product_serial": "ec22b6ee-bda4-70bd-7725-d7f535c46c41",
+        "ansible_product_uuid": "ec22b6ee-bda4-70bd-7725-d7f535c46c41",
+        "ansible_product_version": "4.11.amazon",
+        "ansible_python": {
+            "executable": "/usr/bin/python3",
+            "has_sslcontext": true,
+            "type": "cpython",
+            "version": {
+                "major": 3,
+                "micro": 16,
+                "minor": 9,
+                "releaselevel": "final",
+                "serial": 0
+            },
+            "version_info": [
+                3,
+                9,
+                16,
+                "final",
+                0
+            ]
+        },
+        "ansible_python_version": "3.9.16",
+        "ansible_real_group_id": 0,
+        "ansible_real_user_id": 0,
+        "ansible_selinux": {
+            "config_mode": "enforcing",
+            "mode": "enforcing",
+            "policyvers": 33,
+            "status": "enabled",
+            "type": "targeted"
+        },
+        "ansible_selinux_python_present": true,
+        "ansible_service_mgr": "systemd",
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBO83webs76aiGRumBeLl6/AmFmhsdDL+PCVlXTqbb7/9KFXnTMtODyOmcMAR2G8/DsvVtQ9wA6d7XHkW9RxOf28=",
+        "ansible_ssh_host_key_ecdsa_public_keytype": "ecdsa-sha2-nistp256",
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIDriW6Iu/hXRRIcDpufmNRdyOvlGqVcbNy86Ipt8QWOe",
+        "ansible_ssh_host_key_ed25519_public_keytype": "ssh-ed25519",
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQDKVGJj4wLvVox3aVcMsmzVnN84QMJHCvNBJ7MZANPQzlCYD1r5jvVf+G5hweAOCXGx8FpFz86zjMbOxttJLdGTEDpcBhs9STmILybeUJ3V3PymJ/G8CvcZYs5ZwTh3osivsIN2rFJBlUS5T1NM3bKAH4DnH1bCPRBpx+gik6PNzFMPcCDHjIBIQXN6if2VFByzj+aLdPC3GYx5XxCC/fZBc8T5R6NVFcrOvlBq8aDxVcrNDHgbmqRR2GJDRH/9o7UIvjp42Cy2yqtx37djd5kK43QLnbr1NYYbJiF4ktHIoO8dm7GDbRL69EIYuvon9RA6AXLGEiI6xxytF0dCkC4RoMa3+avKVLlh9aS7IONGtPTuG60WGvmvmb2FzcOm1bDULK30EyKkPw5royKZyA62hSv5I7OiJGrvsBxfTD8WibIWIFPBMC9CFld5LXech7rR4Nyg9hlLiXLMsAwkLWD1qW9PfapAlpXJwfQ/BX3m9VEIL9e+zwJ6u3rIiVur0Ok=",
+        "ansible_ssh_host_key_rsa_public_keytype": "ssh-rsa",
+        "ansible_swapfree_mb": 0,
+        "ansible_swaptotal_mb": 0,
+        "ansible_system": "Linux",
+        "ansible_system_capabilities": [],
+        "ansible_system_capabilities_enforced": "False",
+        "ansible_system_vendor": "Xen",
+        "ansible_uptime_seconds": 1253,
+        "ansible_user_dir": "/root",
+        "ansible_user_gecos": "root",
+        "ansible_user_gid": 0,
+        "ansible_user_id": "root",
+        "ansible_user_shell": "/bin/bash",
+        "ansible_user_uid": 0,
+        "ansible_userspace_architecture": "x86_64",
+        "ansible_userspace_bits": "64",
+        "ansible_virtualization_role": "guest",
+        "ansible_virtualization_tech_guest": [
+            "xen"
+        ],
+        "ansible_virtualization_tech_host": [],
+        "ansible_virtualization_type": "xen",
+        "discovered_interpreter_python": "/usr/bin/python3",
+        "gather_subset": [
+            "all"
+        ],
+        "module_setup": true
+    },
+    "changed": false
+}
+2023-12-04 12:32:39,846 p=437884 u=ssd n=ansible | PLAY [Uninstall packages from Ubuntu and CentOs] *****************************************************************************************************
+2023-12-04 12:32:39,858 p=437884 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 12:33:13,041 p=437884 u=ssd n=ansible | ok: [web01]
+2023-12-04 12:33:37,583 p=437884 u=ssd n=ansible | ok: [web02]
+2023-12-04 12:33:59,491 p=437884 u=ssd n=ansible | ok: [db]
+2023-12-04 12:33:59,535 p=437884 u=ssd n=ansible | TASK [Uninstall packages from Ubuntu] ****************************************************************************************************************
+2023-12-04 12:33:59,564 p=437884 u=ssd n=ansible | skipping: [web01] => (item=ntp) 
+2023-12-04 12:33:59,568 p=437884 u=ssd n=ansible | skipping: [web01] => (item=wget) 
+2023-12-04 12:33:59,574 p=437884 u=ssd n=ansible | skipping: [web01] => (item=git) 
+2023-12-04 12:33:59,575 p=437884 u=ssd n=ansible | skipping: [web01] => (item=zip) 
+2023-12-04 12:33:59,576 p=437884 u=ssd n=ansible | skipping: [web01] => (item=unzip) 
+2023-12-04 12:33:59,583 p=437884 u=ssd n=ansible | skipping: [web01]
+2023-12-04 12:34:12,595 p=437884 u=ssd n=ansible | ok: [web02] => (item=ntp)
+2023-12-04 12:34:23,861 p=437884 u=ssd n=ansible | ok: [web02] => (item=wget)
+2023-12-04 12:34:35,738 p=437884 u=ssd n=ansible | ok: [web02] => (item=git)
+2023-12-04 12:34:47,825 p=437884 u=ssd n=ansible | ok: [web02] => (item=zip)
+2023-12-04 12:35:04,819 p=437884 u=ssd n=ansible | ok: [web02] => (item=unzip)
+2023-12-04 12:35:04,846 p=437884 u=ssd n=ansible | skipping: [db] => (item=ntp) 
+2023-12-04 12:35:04,853 p=437884 u=ssd n=ansible | skipping: [db] => (item=wget) 
+2023-12-04 12:35:04,854 p=437884 u=ssd n=ansible | skipping: [db] => (item=git) 
+2023-12-04 12:35:04,859 p=437884 u=ssd n=ansible | skipping: [db] => (item=zip) 
+2023-12-04 12:35:04,860 p=437884 u=ssd n=ansible | skipping: [db] => (item=unzip) 
+2023-12-04 12:35:04,861 p=437884 u=ssd n=ansible | skipping: [db]
+2023-12-04 12:35:04,869 p=437884 u=ssd n=ansible | TASK [Uninstall packages from CentOs] ****************************************************************************************************************
+2023-12-04 12:35:04,898 p=437884 u=ssd n=ansible | skipping: [web01] => (item=chrony) 
+2023-12-04 12:35:04,903 p=437884 u=ssd n=ansible | skipping: [web01] => (item=wget) 
+2023-12-04 12:35:04,904 p=437884 u=ssd n=ansible | skipping: [web01] => (item=git) 
+2023-12-04 12:35:04,913 p=437884 u=ssd n=ansible | skipping: [web01] => (item=zip) 
+2023-12-04 12:35:04,914 p=437884 u=ssd n=ansible | skipping: [web01] => (item=unzip) 
+2023-12-04 12:35:04,923 p=437884 u=ssd n=ansible | skipping: [web01]
+2023-12-04 12:35:04,939 p=437884 u=ssd n=ansible | skipping: [web02] => (item=chrony) 
+2023-12-04 12:35:04,944 p=437884 u=ssd n=ansible | skipping: [web02] => (item=wget) 
+2023-12-04 12:35:04,950 p=437884 u=ssd n=ansible | skipping: [web02] => (item=git) 
+2023-12-04 12:35:04,951 p=437884 u=ssd n=ansible | skipping: [web02] => (item=zip) 
+2023-12-04 12:35:04,955 p=437884 u=ssd n=ansible | skipping: [web02] => (item=unzip) 
+2023-12-04 12:35:04,963 p=437884 u=ssd n=ansible | skipping: [web02]
+2023-12-04 12:35:04,980 p=437884 u=ssd n=ansible | skipping: [db] => (item=chrony) 
+2023-12-04 12:35:04,983 p=437884 u=ssd n=ansible | skipping: [db] => (item=wget) 
+2023-12-04 12:35:04,988 p=437884 u=ssd n=ansible | skipping: [db] => (item=git) 
+2023-12-04 12:35:04,989 p=437884 u=ssd n=ansible | skipping: [db] => (item=zip) 
+2023-12-04 12:35:04,990 p=437884 u=ssd n=ansible | skipping: [db] => (item=unzip) 
+2023-12-04 12:35:04,992 p=437884 u=ssd n=ansible | skipping: [db]
+2023-12-04 12:35:05,094 p=437884 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 12:35:05,095 p=437884 u=ssd n=ansible | db                         : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-12-04 12:35:05,095 p=437884 u=ssd n=ansible | web01                      : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-12-04 12:35:05,095 p=437884 u=ssd n=ansible | web02                      : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-04 12:37:21,293 p=445392 u=ssd n=ansible | PLAY [Uninstall packages from Ubuntu and CentOS] *****************************************************************************************************
+2023-12-04 12:37:21,304 p=445392 u=ssd n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2023-12-04 12:37:47,944 p=445392 u=ssd n=ansible | ok: [web01]
+2023-12-04 12:38:12,900 p=445392 u=ssd n=ansible | ok: [web02]
+2023-12-04 12:38:35,522 p=445392 u=ssd n=ansible | ok: [db]
+2023-12-04 12:38:35,562 p=445392 u=ssd n=ansible | TASK [Uninstall packages from Ubuntu] ****************************************************************************************************************
+2023-12-04 12:38:35,590 p=445392 u=ssd n=ansible | skipping: [web01] => (item=ntp) 
+2023-12-04 12:38:35,595 p=445392 u=ssd n=ansible | skipping: [web01] => (item=wget) 
+2023-12-04 12:38:35,596 p=445392 u=ssd n=ansible | skipping: [web01] => (item=git) 
+2023-12-04 12:38:35,603 p=445392 u=ssd n=ansible | skipping: [web01] => (item=zip) 
+2023-12-04 12:38:35,604 p=445392 u=ssd n=ansible | skipping: [web01] => (item=unzip) 
+2023-12-04 12:38:35,612 p=445392 u=ssd n=ansible | skipping: [web01]
+2023-12-04 12:38:49,044 p=445392 u=ssd n=ansible | ok: [web02] => (item=ntp)
+2023-12-04 12:39:03,067 p=445392 u=ssd n=ansible | ok: [web02] => (item=wget)
+2023-12-04 12:39:17,144 p=445392 u=ssd n=ansible | ok: [web02] => (item=git)
+2023-12-04 12:39:28,882 p=445392 u=ssd n=ansible | ok: [web02] => (item=zip)
+2023-12-04 12:39:45,066 p=445392 u=ssd n=ansible | ok: [web02] => (item=unzip)
+2023-12-04 12:39:45,089 p=445392 u=ssd n=ansible | skipping: [db] => (item=ntp) 
+2023-12-04 12:39:45,095 p=445392 u=ssd n=ansible | skipping: [db] => (item=wget) 
+2023-12-04 12:39:45,101 p=445392 u=ssd n=ansible | skipping: [db] => (item=git) 
+2023-12-04 12:39:45,102 p=445392 u=ssd n=ansible | skipping: [db] => (item=zip) 
+2023-12-04 12:39:45,105 p=445392 u=ssd n=ansible | skipping: [db] => (item=unzip) 
+2023-12-04 12:39:45,106 p=445392 u=ssd n=ansible | skipping: [db]
+2023-12-04 12:39:45,117 p=445392 u=ssd n=ansible | TASK [Uninstall packages from CentOS] ****************************************************************************************************************
+2023-12-04 12:40:07,767 p=445392 u=ssd n=ansible | changed: [web01] => (item=chrony)
+2023-12-04 12:40:22,045 p=445392 u=ssd n=ansible | ok: [web01] => (item=wget)
+2023-12-04 12:40:37,049 p=445392 u=ssd n=ansible | ok: [web01] => (item=git)
+2023-12-04 12:40:50,404 p=445392 u=ssd n=ansible | ok: [web01] => (item=zip)
+2023-12-04 12:41:02,189 p=445392 u=ssd n=ansible | ok: [web01] => (item=unzip)
+2023-12-04 12:41:02,225 p=445392 u=ssd n=ansible | skipping: [web02] => (item=chrony) 
+2023-12-04 12:41:02,230 p=445392 u=ssd n=ansible | skipping: [web02] => (item=wget) 
+2023-12-04 12:41:02,231 p=445392 u=ssd n=ansible | skipping: [web02] => (item=git) 
+2023-12-04 12:41:02,240 p=445392 u=ssd n=ansible | skipping: [web02] => (item=zip) 
+2023-12-04 12:41:02,241 p=445392 u=ssd n=ansible | skipping: [web02] => (item=unzip) 
+2023-12-04 12:41:02,249 p=445392 u=ssd n=ansible | skipping: [web02]
+2023-12-04 12:41:22,361 p=445392 u=ssd n=ansible | changed: [db] => (item=chrony)
+2023-12-04 12:41:34,234 p=445392 u=ssd n=ansible | ok: [db] => (item=wget)
+2023-12-04 12:41:47,309 p=445392 u=ssd n=ansible | ok: [db] => (item=git)
+2023-12-04 12:41:59,837 p=445392 u=ssd n=ansible | ok: [db] => (item=zip)
+2023-12-04 12:42:14,108 p=445392 u=ssd n=ansible | ok: [db] => (item=unzip)
+2023-12-04 12:42:14,183 p=445392 u=ssd n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2023-12-04 12:42:14,183 p=445392 u=ssd n=ansible | db                         : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-04 12:42:14,183 p=445392 u=ssd n=ansible | web01                      : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-04 12:42:14,183 p=445392 u=ssd n=ansible | web02                      : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
